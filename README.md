@@ -10,6 +10,14 @@ UNDER DEVELOPMENT OK, come back later
 - [tailwind](https://tailwindcss.com/)
 - [mdx-bundler](https://github.com/kentcdodds/mdx-bundler)
 
+## todo
+- styling
+  + shifting gradient bg?
+  + soft white/grey/beige aesthetic?
+- `CurrentActivity` component
+
+### misc
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
