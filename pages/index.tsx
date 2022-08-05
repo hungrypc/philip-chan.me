@@ -26,7 +26,7 @@ const mdxComponents = { ...components, Experience, Break, Image, ItsaMe }
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
-export default function Home({ code }: Props) {
+const Home: React.FC<Props> = ({ code }) => {
   const Component = useMemo(() => getMDXComponent(code), [code])
 
   return (
@@ -35,3 +35,5 @@ export default function Home({ code }: Props) {
     </article>
   )
 }
+
+export default Home

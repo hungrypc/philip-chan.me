@@ -4,7 +4,7 @@ import { images } from '@utils/media'
 
 const image = images[0]
 
-export function ItsaMe() {
+export const ItsaMe: React.FC = () => {
   return (
     <div key={image.src} className='max-w-lg mx-auto'>
       <Image

@@ -8,7 +8,7 @@ import '@public/styles/global.css'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import Nav from '@components/Nav'
+import { Nav } from '@components/Nav'
 import { SEO } from '@components/SEO'
 import { TagsProvider } from '@components/tags/TagsContext'
 

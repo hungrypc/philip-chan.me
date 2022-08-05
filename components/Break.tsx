@@ -1,3 +1,1 @@
-export function Break() {
-  return <div className='h-4'></div>
-}
+export const Break: React.FC = () => <div className='h-4'></div>

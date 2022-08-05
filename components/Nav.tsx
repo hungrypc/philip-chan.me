@@ -10,7 +10,7 @@ const routes = [
   { route: '/notes', title: 'notes' },
 ]
 
-const Nav: React.FC = () => {
+export const Nav: React.FC = () => {
   const router = useRouter()
   const { resetTags } = useTags()
 
@@ -42,5 +42,3 @@ const Nav: React.FC = () => {
     </header>
   )
 }
-
-export default Nav

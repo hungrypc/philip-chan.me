@@ -114,7 +114,7 @@
   }
 
   *::selection {
-    @apply bg-unhovered text-warmGray-800;
+    @apply bg-unhovered text-stone-800;
   }
 
   .shadow_line {
@@ -137,7 +137,7 @@
   }
 
   .button {
-    @apply p-2 border-2 border-warmGray-200 dark:border-warmGray-500;
+    @apply p-2 border-2 border-stone-200 dark:border-stone-500;
   }
 
   .link {
@@ -149,7 +149,7 @@
   }
 
   article :is(h1, h2, h3, h4, h5, h6) {
-    @apply flex mt-8 mb-5 font-semibold text-warmGray-800 dark:text-warmGray-200;
+    @apply flex mt-8 mb-5 font-semibold text-stone-800 dark:text-stone-200;
     scroll-margin-top: 5rem;
   }
 
@@ -173,7 +173,7 @@
   }
 
   article strong {
-    @apply text-warmGray-800 dark:text-warmGray-200;
+    @apply text-stone-800 dark:text-stone-200;
   }
 
   article blockquote code {
@@ -184,7 +184,7 @@
     background: var(--syntax-background);
     white-space: nowrap;
     font-family: 'Fira Code', monospace;
-    @apply rounded-sm mx-1 py-[2px] px-2 text-sm text-warmGray-800 dark:text-warmGray-200;
+    @apply rounded-sm mx-1 py-[2px] px-2 text-sm text-stone-800 dark:text-stone-200;
   }
   article :not(pre) > code::before {
     content: '`';

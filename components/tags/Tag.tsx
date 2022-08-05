@@ -2,7 +2,16 @@ import { useRouter } from 'next/router'
 
 import { useTags } from './TagsContext'
 
-export function Tag({ tag, count }: { tag: string; count?: number }) {
+type TagProps = {
+  tag: string
+  count?: number
+}
+
+type TagListProps = {
+  postTagCountMap: Record<string, number>
+}
+
+export const Tag: React.FC<TagProps> = ({ tag, count }) => {
   const { tags, toggleTags, resetTags } = useTags()
   const isSelected = tags.has(tag)
   const router = useRouter()
@@ -31,7 +40,7 @@ export function Tag({ tag, count }: { tag: string; count?: number }) {
   )
 }
 
-export function TagList({ postTagCountMap }: { postTagCountMap: Record<string, number> }) {
+export const TagList: React.FC<TagListProps> = ({ postTagCountMap }) => {
   const tags: JSX.Element[] = []
   Object.keys(postTagCountMap).forEach((tag) => {
     tags.push(<TagListItem tag={tag} count={postTagCountMap[tag]} />)
@@ -45,15 +54,13 @@ export function TagList({ postTagCountMap }: { postTagCountMap: Record<string, n
   )
 }
 
-export function TagListItem({ tag, count }: { tag: string; count: number }) {
-  return (
-    <span>
-      <Tag tag={tag} count={count} />
-    </span>
-  )
-}
+export const TagListItem: React.FC<MarkRequired<TagProps, 'count'>> = ({ tag, count }) => (
+  <span>
+    <Tag tag={tag} count={count} />
+  </span>
+)
 
-export function ResetTagsButton() {
+export const ResetTagsButton: React.FC = () => {
   const { resetTags } = useTags()
   return (
     <div className='my-8'>

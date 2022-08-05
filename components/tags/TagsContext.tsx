@@ -1,14 +1,17 @@
 import { createContext, Dispatch, ReactNode, useContext, useReducer } from 'react'
 
 type Tags = Set<string>
+type TagsProviderProps = {
+  children: ReactNode
+  tagNames?: string[]
+}
+
+type ContextValue = { tags: Tags; toggleTags: Dispatch<string>; resetTags: Set<string>['clear'] }
+const TagsContext = createContext<undefined | ContextValue>(undefined)
 
 type Reducer = (prevTags: Tags, tag: string) => Tags
 
-type ContextValue = { tags: Tags; toggleTags: Dispatch<string>; resetTags: Set<string>['clear'] }
-
-const TagsContext = createContext<undefined | ContextValue>(undefined)
-
-export function TagsProvider({ children }: { children: ReactNode; tagNames?: string[] }) {
+export const TagsProvider: React.FC<TagsProviderProps> = ({ children }) => {
   const [tags, toggleTags] = useReducer<Reducer>((prevTags: Tags, tag: string) => {
     if (prevTags.has(tag)) {
       prevTags.delete(tag)
@@ -23,7 +26,7 @@ export function TagsProvider({ children }: { children: ReactNode; tagNames?: str
   return <TagsContext.Provider value={{ tags, toggleTags, resetTags }}>{children}</TagsContext.Provider>
 }
 
-export function useTags() {
+export const useTags = () => {
   const context = useContext(TagsContext)
   if (!context) {
     throw new Error('useTags must be used within a TagsProvider')
