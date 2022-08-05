@@ -1,0 +1,4 @@
+personalWebsite:
+  component: "./node_modules/@sls-next/serverless-component"
+  inputs: 
+    - domain: 'philip-chan.me'

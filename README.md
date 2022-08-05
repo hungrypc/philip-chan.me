@@ -1,3 +1,15 @@
+# [philip-chan.me](https://www.philip-chan.me)
+
+UNDER DEVELOPMENT OK, come back later
+
+## stack
+
+- [ts](https://www.typescriptlang.org/)
+- [next.js](https://nextjs.org/)
+- [preact](https://preactjs.com/)
+- [tailwind](https://tailwindcss.com/)
+- [mdx-bundler](https://github.com/kentcdodds/mdx-bundler)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
