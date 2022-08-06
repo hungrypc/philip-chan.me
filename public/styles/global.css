@@ -6,7 +6,7 @@
   body.light {
     --theme: 'light';
     --color-text: #584e4e; /* coffee */
-    /* --color-text: #576F72; */ /* stone ocean */
+    /* --color-text: #576F72; stone ocean */
     --color-text-secondary: #6d6f88;
     --color-background: #F9F9F9;
     --color-nav-background: transparent;
@@ -178,39 +178,12 @@
     @apply text-stone-800 dark:text-stone-200;
   }
 
-  article blockquote code {
-    @apply not-italic;
-  }
-
-  article :not(pre) > code {
-    background: var(--syntax-background);
-    white-space: nowrap;
-    font-family: 'Fira Code', monospace;
-    @apply rounded-sm mx-1 py-[2px] px-2 text-sm text-stone-800 dark:text-stone-200;
-  }
-  article :not(pre) > code::before {
-    content: '`';
-  }
-
-  article :not(pre) > code::after {
-    content: '`';
-  }
-
-  article blockquote {
-    @apply relative py-1 pl-[2ch] pr-[1ch] my-8 italic bg-[#42828e14] dark:bg-[#2a2e31];
-  }
-
-  article blockquote::before {
-    content: '';
-    @apply absolute top-0 left-0 inline-block w-1 h-full bg-[color:var(--color-text)];
-  }
-
   article li {
     @apply relative my-3 pl-7;
   }
 
   article li::before {
-    content: '—';
+    content: '»';
     @apply absolute left-1 opacity-90;
   }
 }

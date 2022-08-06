@@ -1,4 +1,6 @@
-import Document, { Head, Html, Main, NextScript } from 'next/document'
+import Document, { Head, Html, Main } from 'next/document'
+
+import DeferNextScript from '@components/DeferNextScript'
 
 class MyDocument extends Document {
   render() {
@@ -12,7 +14,7 @@ class MyDocument extends Document {
             }}
           />
           <Main />
-          <NextScript />
+          <DeferNextScript />
         </body>
       </Html>
     )

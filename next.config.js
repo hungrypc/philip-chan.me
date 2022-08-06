@@ -5,6 +5,10 @@ const withPreact = require('next-plugin-preact')
 const nextConfig = withPreact({
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    // domains: ['res.cloudinary.com'],
+    deviceSizes: [375, 425, 600],
+  },
 })
 
 module.exports = nextConfig

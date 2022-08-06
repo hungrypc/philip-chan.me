@@ -2,6 +2,7 @@
   font-family: 'iA Quattro';
   font-stretch: 25% 150%;
   font-weight: 400 900;
+  font-display: swap;
   src: url(/fonts/iAWriterQuattroV.ttf) format('truetype-variations');
 }
 
@@ -9,6 +10,7 @@
   font-family: 'iA Quattro';
   font-stretch: 25% 150%;
   font-weight: 400 900;
+  font-display: swap;
   font-style: italic;
   src: url(/fonts/iAWriterQuattroV-Italic.ttf) format('truetype-variations');
 }
@@ -64,22 +66,6 @@
   font-weight: 700;
   src: url(/fonts/fira-code/fira-code-v9-latin-700.woff2) format('woff2'),
     url(/fonts/fira-code/fira-code-v9-latin-700.woff) format('woff');
-}
-
-/* @font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 400;
-  src: url(/fonts/CormorantGaramond-Regular.woff2) format('woff2');
-} */
-
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-display: swap;
-  font-weight: 400;
-  src: url(/fonts/Cormorant-MediumItalic.woff2) format('woff2');
 }
 
 @font-face {

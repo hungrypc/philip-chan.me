@@ -1,21 +1,28 @@
-import React from 'react'
+import { format, localeFormat } from 'light-date'
 
-import { DateTime } from 'luxon'
+const tagFmt = 'yyyy-MM-dd'
 
-export const parseDate = (date: string) => {
-  const parsed = DateTime.fromJSDate(new Date(date))
-  let dateTime
+export const parseDate = (d: string) => {
+  const date = new Date(d)
+  const isValid = date instanceof Date && !isNaN(Date.parse(d))
+  let fmtr
 
-  if (parsed.isValid) {
-    dateTime = parsed
+  if (isValid) {
+    fmtr = (f: string) => {
+      const parsedFmt = f.replace(/([a-zA-Z]{1,})/g, (substr: string) => {
+        const parsedStr = `{${substr}}`
+        return /[M]{3}/.test(substr) ? localeFormat(date, parsedStr) : parsedStr
+      })
+      return format(date, parsedFmt)
+    }
   } else {
-    dateTime = { toFormat: () => date }
+    fmtr = () => d
   }
 
   return {
-    full: dateTime.toFormat('DD'),
-    short: <span>{dateTime.toFormat('LL/yy')}</span>,
-    semi: dateTime.toFormat('LLL dd'),
-    tag: (parsed.isValid ? parsed : DateTime.local()).toFormat('yyyy-LL-dd'),
+    full: fmtr('MMM dd, yyyy'),
+    short: <span>{fmtr('MM/yy')}</span>,
+    semi: fmtr('MMM dd'),
+    tag: isValid ? fmtr(tagFmt) : format(new Date(), tagFmt),
   }
 }

@@ -40,7 +40,7 @@ export const getAllPostsMeta = async () => {
 
       return { ...meta, slug } as PostMeta
     })
-    .filter((meta) => meta.published)
+    .filter(meta => meta.published)
     .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)))
 }
 
@@ -56,7 +56,7 @@ export const getAllNotesMeta = async () => {
 
       return { ...meta, slug } as PostMeta
     })
-    .filter((meta) => meta.published)
+    .filter(meta => meta.published)
     .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)))
 }
 
