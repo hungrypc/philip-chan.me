@@ -10,10 +10,10 @@ const experience = [
     details: (
       <>
         <p>
-          Building and improving a software product in which tenants and landlords are able to connect, sign relevant
-          documents, and pay/receive rent throughout the lease term. Responsibilities include project planning (task
-          breakdowns), implementation and maintanence of various (micro) services on backend, building out library and
-          applying component solutions for front-end, and assisting in product-ops support.
+          Guiker is a software platform on which tenants and landlords are able to connect, sign relevant documents, and
+          pay/receive rent throughout the lease term. Responsibilities include project ownership, implementation and
+          maintanence of various (micro) services, building user interface and component library, and product-ops
+          support.
         </p>
         <p>Stack: React, TypeScript, AWS, MongoDB, MySQL</p>
       </>

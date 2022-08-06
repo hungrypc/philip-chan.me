@@ -16,7 +16,11 @@ UNDER DEVELOPMENT OK, come back later
   + soft white/grey/beige aesthetic?
 - `CurrentActivity` component
 
-### misc
+### color palettes
+- [beige grey](https://colorhunt.co/palette/f0ebe3e4dccf7d9d9c576f72)
+- [coffee](https://colorhunt.co/palette/f9f9f9bcbab89d8f8f625757)
+
+## misc
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
