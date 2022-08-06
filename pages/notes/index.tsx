@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
-import { PostPreviewList } from 'pages/posts'
 
+import { PostPreviewList } from '@components/PostPreviewList'
 import { getAllNotesMeta } from '@utils/loadMDX'
 
 export const getStaticProps = async () => {

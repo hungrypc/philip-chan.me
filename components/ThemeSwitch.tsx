@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { Props } from 'react-toggle-dark-mode'
 
-import { setLocalStorage } from '../utils/localStorage'
+import { setLocalStorage } from '@utils/localStorage'
 
 const DarkModeSwitch = dynamic<Props>(() => import('react-toggle-dark-mode').then((mod) => mod.DarkModeSwitch), {
   loading: () => <div className='w-5 h-5'></div>,

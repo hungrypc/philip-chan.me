@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-css-tags */
 import Head from 'next/head'
 import { NextSeo } from 'next-seo'
-import { formatTags } from 'pages/posts'
 
 import { parseDate } from '@utils/date'
+import { formatTags } from '@utils/tags'
 
 import { Tag } from './tags/Tag'
 
@@ -35,7 +35,7 @@ export const PostPage: React.FC<Props> = ({ meta, children }) => {
           {formatTags(meta.tags).map((tag: string, index: number) => (
             <Tag key={index} tag={tag}></Tag>
           ))}
-          <div className='flex flex-col	pt-4 pb-1 text-sm font-thin uppercase text-warmGray-500 dark:text-warmGray-400'>
+          <div className='flex flex-col	pt-4 pb-1 text-sm font-thin uppercase text-stone-500 dark:text-stone-400'>
             <time dateTime={datetime.tag}>Published on {datetime.full}</time>
             {meta.lastUpdateDate ? (
               <time dateTime={datetime.tag}>Last updated on {parseDate(meta.lastUpdateDate).full}</time>

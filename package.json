@@ -19,10 +19,10 @@
     "build:media": "esno utils/buildMedia.ts",
     "lint": "next lint",
     "lint:base": "eslint --config .eslintrc.js --cache",
-    "lint:check": "npm run lint:base \"./**/*.{ts,tsx}\"",
+    "lint:check": "yarn lint:base \"./**/*.{ts,tsx}\"",
     "lint:fix": "eslint --fix . --ignore-path ./.gitignore",
     "prettier:check": "prettier  --config ./.prettierrc.js --check \"./**/*\"",
-    "prettier:fix": "npm run prettier:check --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" --ignore-path ./.gitignore"
+    "prettier:fix": "yarn prettier:check --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" --ignore-path ./.gitignore"
   },
   "dependencies": {
     "fs": "^0.0.1-security",
@@ -72,7 +72,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn build",
       "pre-commit": "lint-staged"
     }
   },
