@@ -5,7 +5,7 @@ import { images } from '@utils/media'
 const image = images[0]
 
 export const ItsaMe: React.FC = () => (
-  <div key={image.src} className='max-w-xl mx-auto'>
+  <div key={image.src} className='max-w-lg mx-auto'>
     <Image
       className='z-10'
       src={image}
@@ -13,9 +13,7 @@ export const ItsaMe: React.FC = () => (
       placeholder='blur'
       objectFit='contain'
       layout='responsive'
-      // sizes=''
       priority
-      // blurDataURL={image.blurDataURL}
     />
   </div>
 )
