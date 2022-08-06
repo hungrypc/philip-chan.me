@@ -42,7 +42,7 @@ export const Tag: React.FC<TagProps> = ({ tag, count }) => {
 
 export const TagList: React.FC<TagListProps> = ({ postTagCountMap }) => {
   const tags: JSX.Element[] = []
-  Object.keys(postTagCountMap).forEach((tag) => {
+  Object.keys(postTagCountMap).forEach(tag => {
     tags.push(<TagListItem tag={tag} count={postTagCountMap[tag]} />)
   })
 

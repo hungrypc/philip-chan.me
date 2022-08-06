@@ -21,7 +21,7 @@ export const TagsProvider: React.FC<TagsProviderProps> = ({ children }) => {
     return new Set(prevTags)
   }, new Set<string>())
 
-  const resetTags = () => tags.forEach((tag) => toggleTags(tag))
+  const resetTags = () => tags.forEach(tag => toggleTags(tag))
 
   return <TagsContext.Provider value={{ tags, toggleTags, resetTags }}>{children}</TagsContext.Provider>
 }

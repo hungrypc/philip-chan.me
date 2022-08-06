@@ -32,15 +32,15 @@ export const PostPreviewList: React.FC<{ posts: PostMeta[] }> = ({ posts }) => {
   const { tags: selectedTags } = useTags()
   const showAllPosts = selectedTags.size === 0
   const postTagCountMap = posts.reduce((tagCountMap, post) => {
-    formatTags(post.tags).forEach((tag) => (tagCountMap[tag] = (tagCountMap[tag] ?? 0) + 1))
+    formatTags(post.tags).forEach(tag => (tagCountMap[tag] = (tagCountMap[tag] ?? 0) + 1))
     return tagCountMap
   }, {} as { [key: string]: number })
 
   const fileredPosts = showAllPosts
     ? posts
-    : posts.filter((post) => {
+    : posts.filter(post => {
         const postTagSet = new Set(formatTags(post.tags))
-        return Array.from(selectedTags).every((selectedTag) => postTagSet.has(selectedTag))
+        return Array.from(selectedTags).every(selectedTag => postTagSet.has(selectedTag))
       })
 
   if (!showAllPosts && fileredPosts.length === 0) {
@@ -54,7 +54,7 @@ export const PostPreviewList: React.FC<{ posts: PostMeta[] }> = ({ posts }) => {
 
   const postsByYear: Record<string, PostMeta[]> = {}
 
-  fileredPosts.forEach((post) => {
+  fileredPosts.forEach(post => {
     const year = new Date(post.date).getFullYear()
     const knownPosts = postsByYear[year] || []
     postsByYear[year] = [...knownPosts, post]
@@ -70,7 +70,7 @@ export const PostPreviewList: React.FC<{ posts: PostMeta[] }> = ({ posts }) => {
             <div key={year} className='w-full'>
               <h2 className='pl-1 text-lg font-semibold'>{year}</h2>
               <ul>
-                {posts.map((post) => {
+                {posts.map(post => {
                   return <PostPreview key={post.slug} {...post} />
                 })}
               </ul>

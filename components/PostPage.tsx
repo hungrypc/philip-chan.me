@@ -28,6 +28,20 @@ export const PostPage: React.FC<Props> = ({ meta, children }) => {
       />
       <Head>
         <link rel='stylesheet' href='/styles/prism.css' />
+        <link
+          rel='preload'
+          href='/fonts/fira-code/fira-code-v9-latin-regular.woff'
+          as='font'
+          crossOrigin=''
+          type='font/woff'
+        />
+        <link
+          rel='preload'
+          href='/fonts/fira-code/fira-code-v9-latin-regular.woff2'
+          as='font'
+          crossOrigin=''
+          type='font/woff2'
+        />
       </Head>
       <article className='max-w-[85ch] mx-auto pt-12 pb-28  px-5'>
         <div className='pb-8'>
