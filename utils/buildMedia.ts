@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { promises as fsPromises } from 'fs'
 import { join } from 'path'
 import glob from 'tiny-glob'
@@ -11,21 +12,14 @@ function doubleDigit(n: number) {
 async function buildMedia() {
   const files = await glob(`*`, { cwd: `${RootDir}/public/media/` })
   const images: string[] = []
-  const videos: string[] = []
-  const videoPosters: string[] = []
 
   for (const file of files) {
-    const [name, extension] = file.split('.')
+    const [_, extension] = file.split('.')
 
-    if (extension === 'jpg') {
-      files.includes(`${name}.mp4`) ? videoPosters.push(file) : images.push(file)
-    } else if (extension === 'mp4') {
-      videos.push(file)
+    if (['WEBP', 'JPG', 'JPEG'].includes(extension?.toUpperCase())) {
+      images.push(file)
     }
   }
-
-  images.reverse()
-  videos.reverse()
 
   const exports = ['// This is a generated file\n\n']
   let count = 1
@@ -37,19 +31,7 @@ async function buildMedia() {
     count += 1
   }
 
-  count = 1
-  const posterNames: string[] = []
-  const videoPaths: string[] = []
-  for (const poster of videoPosters) {
-    const name = `poster${doubleDigit(count)}`
-    posterNames.push(name)
-    exports.push(`import ${name} from '../public/media/${poster}'\n`)
-    count += 1
-    videoPaths.push(`["/media/${poster.replace('.jpg', '.mp4')}", ${name}.blurDataURL]`)
-  }
-
   exports.push(`\nexport const images = [${imgNames.toString()}]\n`)
-  exports.push(`\nexport const videos: Array<[string, string | undefined]> = [${videoPaths.toString()}]\n`)
 
   await fsPromises.writeFile(join('.', 'utils', 'media.ts'), exports.join(''), 'utf-8')
 }

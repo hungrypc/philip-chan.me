@@ -14,8 +14,9 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
+    "export": "next build && next export",
     "build:media": "esno utils/buildMedia.ts",
     "lint": "next lint",
     "lint:base": "eslint --config .eslintrc.js --cache",

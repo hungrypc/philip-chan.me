@@ -2,13 +2,13 @@
 const withPreact = require('next-plugin-preact')
 
 /** @type {import('next').NextConfig} */
-const nextConfig = withPreact({
-  reactStrictMode: true,
-  swcMinify: true,
-  images: {
-    // domains: ['res.cloudinary.com'],
-    deviceSizes: [375, 425, 600],
-  },
-})
-
-module.exports = nextConfig
+module.exports = () => {
+  const plugins = [withPreact]
+  return plugins.reduce((acc, next) => next(acc), {
+    reactStrictMode: true,
+    swcMinify: true,
+    images: {
+      // domains: ['res.cloudinary.com'],
+    },
+  })
+}
