@@ -9,7 +9,6 @@ module.exports = () => {
     swcMinify: true,
     images: {
       // domains: ['res.cloudinary.com'],
-      deviceSizes: [375, 425, 600],
     },
   })
 }
