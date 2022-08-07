@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
+import Image, { ImageProps } from 'next/image'
 import Link from 'next/link'
-import ExportedImage, { ExportedImageProps } from 'next-image-export-optimizer'
 
 export const components = {
   a: ({ href = '', ...props }) => {
@@ -15,7 +15,7 @@ export const components = {
   },
   img: ({ children, ...props }: { children?: React.ReactNode }) => (
     <div className='my-10'>
-      <ExportedImage {...(props as ExportedImageProps)} layout='fill' />
+      <Image {...(props as ImageProps)} layout='fill' />
     </div>
   ),
 }

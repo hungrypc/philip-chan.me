@@ -3,7 +3,7 @@ import React, { useMemo } from 'react'
 import fs from 'fs'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { InferGetStaticPropsType } from 'next'
-import { default as Image } from 'next-image-export-optimizer'
+import Image from 'next/image'
 import path from 'path'
 
 import { Break } from '@components/Break'

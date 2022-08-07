@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { promises as fsPromises } from 'fs'
 import { join } from 'path'
 import glob from 'tiny-glob'
@@ -9,18 +10,16 @@ function doubleDigit(n: number) {
 }
 
 async function buildMedia() {
-  const files = await glob(`*`, { cwd: `${RootDir}/public/images/` })
+  const files = await glob(`*`, { cwd: `${RootDir}/public/media/` })
   const images: string[] = []
 
   for (const file of files) {
-    const extension = file.split('.')[1]
+    const [_, extension] = file.split('.')
 
-    if (extension === 'jpg') {
+    if (['WEBP', 'JPG', 'JPEG'].includes(extension?.toUpperCase())) {
       images.push(file)
     }
   }
-
-  images.reverse()
 
   const exports = ['// This is a generated file\n\n']
   let count = 1
@@ -28,7 +27,7 @@ async function buildMedia() {
   for (const image of images) {
     const name = `file${doubleDigit(count)}`
     imgNames.push(name)
-    exports.push(`import ${name} from '../public/images/${image}'\n`)
+    exports.push(`import ${name} from '../public/media/${image}'\n`)
     count += 1
   }
 
