@@ -14,8 +14,9 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export && next-image-export-optimizer",
     "start": "next start",
+    "export": "next build && next export && next-image-export-optimizer",
     "build:media": "esno utils/buildMedia.ts",
     "lint": "next lint",
     "lint:base": "eslint --config .eslintrc.js --cache",
@@ -30,6 +31,7 @@
     "lodash": "^4.17.21",
     "mdx-bundler": "^9.0.1",
     "next": "^12.2.4",
+    "next-image-export-optimizer": "^0.12.1",
     "next-plugin-preact": "^3.0.7",
     "next-seo": "^5.5.0",
     "preact": "^10.10.1",
