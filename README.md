@@ -1,7 +1,5 @@
 # [philip-chan.me](https://www.philip-chan.me)
 
-UNDER DEVELOPMENT OK, come back later
-
 ## stack
 
 - [ts](https://www.typescriptlang.org/)
@@ -11,8 +9,9 @@ UNDER DEVELOPMENT OK, come back later
 - [mdx-bundler](https://github.com/kentcdodds/mdx-bundler)
 
 ## todo
-- `next-image-export-optimizer` not reading next.config.js, due to plugin?
-- `CurrentActivity` component
+- sidebar toc
+- cloudfront cdn, images
+- spline? me section
 
 ### color palettes
 - [beige grey](https://colorhunt.co/palette/f0ebe3e4dccf7d9d9c576f72)

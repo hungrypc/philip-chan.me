@@ -3,8 +3,8 @@ import { useMemo } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 
+import { PostPage } from '@components/content'
 import { components } from '@components/MDXComponents'
-import { PostPage } from '@components/PostPage'
 import { getAllNotesMeta, getNote } from '@utils/loadMDX'
 
 export const getStaticPaths = async () => {

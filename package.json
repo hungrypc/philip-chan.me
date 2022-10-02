@@ -26,6 +26,7 @@
     "prettier:fix": "yarn prettier:check --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" --ignore-path ./.gitignore"
   },
   "dependencies": {
+    "framer-motion": "^7.5.1",
     "fs": "^0.0.1-security",
     "light-date": "^1.2.0",
     "lodash": "^4.17.21",
@@ -33,7 +34,7 @@
     "next": "^12.2.4",
     "next-plugin-preact": "^3.0.7",
     "next-seo": "^5.5.0",
-    "preact": "^10.10.1",
+    "preact": "^10.11.0",
     "preact-render-to-string": "^5.2.1",
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",

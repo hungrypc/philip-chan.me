@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType } from 'next'
 import { NextSeo } from 'next-seo'
 
-import { PostPreviewList } from '@components/PostPreviewList'
+import { PostPreviewList } from '@components/content'
 import { getAllNotesMeta } from '@utils/loadMDX'
 
 export const getStaticProps = async () => {
@@ -19,7 +19,7 @@ const Notes: React.FC<Props> = ({ notes }) => {
         openGraph={{ url: 'https://philip-chan.me/notes' }}
       />
 
-      <div className='w-full sm:max-w-[75ch] m-auto px-5 py-16 flex flex-col justify-center items-center'>
+      <div className='w-full sm:max-w-[85ch] m-auto px-5 py-16 flex flex-col justify-center items-center'>
         <PostPreviewList posts={notes} />
       </div>
     </>
