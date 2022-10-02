@@ -4,8 +4,7 @@ import { useRouter } from 'next/router'
 import { parseDate } from '@utils/date'
 import { formatTags } from '@utils/tags'
 
-import { ResetTagsButton, Tag, TagList } from './tags/Tag'
-import { useTags } from './tags/TagsContext'
+import { ResetTagsButton, Tag, TagList, useTags } from './'
 
 export const PostPreview: React.FC<PostMeta> = ({ slug, title, date, tags }) => {
   const router = useRouter()

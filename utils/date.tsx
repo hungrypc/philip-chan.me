@@ -21,7 +21,7 @@ export const parseDate = (d: string) => {
 
   return {
     full: fmtr('MMM dd, yyyy'),
-    short: <span>{fmtr('MM/yy')}</span>,
+    short: <span>{fmtr('MM/yyyy')}</span>,
     semi: fmtr('MMM dd'),
     tag: isValid ? fmtr(tagFmt) : format(new Date(), tagFmt),
   }

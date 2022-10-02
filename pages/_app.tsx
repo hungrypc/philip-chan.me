@@ -5,12 +5,13 @@ if (process.env.NODE_ENV === 'development') {
 import '@public/styles/font.css'
 import '@public/styles/global.css'
 
+// import { AnimatePresence } from 'framer-motion'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import { Nav } from '@components/Nav'
+import { TagsProvider } from '@components/content'
+import { NavBar } from '@components/navigation'
 import { SEO } from '@components/SEO'
-import { TagsProvider } from '@components/tags/TagsContext'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
   <>
@@ -21,10 +22,12 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
     <SEO />
     <div className='w-full h-full'>
       <TagsProvider>
-        <Nav />
+        <NavBar />
+        {/* <AnimatePresence exitBeforeEnter initial={false}> */}
         <main className='w-full'>
           <Component {...pageProps} />
         </main>
+        {/* </AnimatePresence> */}
       </TagsProvider>
     </div>
   </>

@@ -6,10 +6,9 @@ import { InferGetStaticPropsType } from 'next'
 import Image from 'next/image'
 import path from 'path'
 
-import { Break } from '@components/Break'
-import { Experience } from '@components/Experience'
-import { ItsaMe } from '@components/ItsaMe'
+import { Break } from '@components/layout'
 import { components } from '@components/MDXComponents'
+import { Experience, ItsaMe } from '@components/me'
 import { getAllPostsMeta, loadMDX } from '@utils/loadMDX'
 
 export const getStaticProps = async () => {
@@ -30,7 +29,7 @@ const Home: React.FC<Props> = ({ code }) => {
   const Component = useMemo(() => getMDXComponent(code), [code])
 
   return (
-    <article className='max-w-[75ch] mx-auto pt-12 pb-28 px-5'>
+    <article className='max-w-[85ch] mx-auto pt-12 pb-28 px-5'>
       <Component components={mdxComponents} />
     </article>
   )
