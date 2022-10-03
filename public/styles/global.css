@@ -135,7 +135,7 @@
 
   .link-tag-selected {
     height: max-content;
-    @apply px-1 font-light transition-colors duration-150 ease-linear rounded-sm bg-hovered-tag focus:bg-unhovered-tag hover:bg-unhovered-tag  dark:active:bg-unhovered-tag dark:focus:bg-unhovered-tag dark:active:bg-unhovered-tag dark:bg-hovered-tag-dark dark:hover:text-white;
+    @apply px-1 font-light transition-colors duration-150 ease-linear rounded-sm bg-hovered-tag focus:bg-unhovered-tag hover:bg-unhovered-tag  dark:focus:bg-unhovered-tag dark:active:bg-unhovered-tag dark:bg-hovered-tag-dark dark:hover:text-white;
   }
 
   .button {

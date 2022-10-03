@@ -17,7 +17,7 @@
     "build": "next build && next export",
     "start": "next start",
     "export": "next build && next export",
-    "build:media": "esno utils/buildMedia.ts",
+    "build:media": "esno utils/media/buildMedia.ts",
     "lint": "next lint",
     "lint:base": "eslint --config .eslintrc.js --cache",
     "lint:check": "yarn lint:base \"./**/*.{ts,tsx}\"",
