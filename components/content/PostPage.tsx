@@ -44,7 +44,7 @@ export const PostPage: React.FC<Props> = ({ meta, children }) => {
           type='font/woff2'
         />
       </Head>
-      <article className='max-w-[85ch] mx-auto pt-12 pb-28 px-5'>
+      <article className='max-w-[100ch] mx-auto pt-12 pb-28 px-5'>
         <div className='pb-8'>
           <h1 className='mb-1 text-3xl font-black capitalize md:text-4xl'>{meta.title}</h1>
           <p className='italic'>

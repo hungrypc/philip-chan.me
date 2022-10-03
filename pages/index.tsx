@@ -8,7 +8,7 @@ import path from 'path'
 
 import { Break } from '@components/layout'
 import { components } from '@components/MDXComponents'
-import { Experience, ItsaMe } from '@components/me'
+import { About, Experience } from '@components/me'
 import { getAllPostsMeta, loadMDX } from '@utils/loadMDX'
 
 export const getStaticProps = async () => {
@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
   return { props: { code, posts } }
 }
 
-const mdxComponents = { ...components, Experience, Break, Image, ItsaMe }
+const mdxComponents = { ...components, About, Experience, Break, Image }
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -29,7 +29,7 @@ const Home: React.FC<Props> = ({ code }) => {
   const Component = useMemo(() => getMDXComponent(code), [code])
 
   return (
-    <article className='max-w-[85ch] mx-auto pt-12 pb-28 px-5'>
+    <article className='max-w-[100ch] mx-auto pt-12 pb-28 px-5'>
       <Component components={mdxComponents} />
     </article>
   )

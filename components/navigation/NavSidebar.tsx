@@ -10,7 +10,7 @@ const routes = [
   { route: '/notes', title: 'notes' },
 ]
 
-export const NavBar: React.FC = () => {
+export const NavSidebar: React.FC = () => {
   const router = useRouter()
   const { resetTags } = useTags()
 
@@ -19,8 +19,9 @@ export const NavBar: React.FC = () => {
   }
 
   return (
-    <header className='relative w-full h-16'>
-      <div className='fixed h-20 z-40 w-full flex justify-between backdrop-blur-[20px] backdrop-saturate-150 bg-[#F9F9F950] dark:bg-[#0f101050]'>
+    <div className='flex'>
+      <aside className='h-screen sticky top-0'></aside>
+      {/* <div className='fixed h-20 z-40 w-full flex justify-between backdrop-blur-[20px] backdrop-saturate-150 bg-[#F9F9F950] dark:bg-[#0f101050]'>
         <nav className='w-full sm:max-w-[100ch] m-auto sm:grid md:flex px-5 justify-between items-center '>
           <Link href='/' passHref>
             <a title='Home' aria-label='Home'>
@@ -43,7 +44,7 @@ export const NavBar: React.FC = () => {
             <ThemeSwitch />
           </div>
         </nav>
-      </div>
-    </header>
+      </div> */}
+    </div>
   )
 }

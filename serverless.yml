@@ -1,4 +1,0 @@
-personalWebsite:
-  component: "@sls-next/serverless-component@3.6.0"
-  inputs: 
-    - domain: 'philip-chan.me'
