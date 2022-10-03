@@ -47,10 +47,10 @@ export const PostPage: React.FC<Props> = ({ meta, children }) => {
       <article className='max-w-[100ch] mx-auto pt-12 pb-28 px-5'>
         <div className='pb-8'>
           <h1 className='mb-1 text-3xl font-black capitalize md:text-4xl'>{meta.title}</h1>
-          <p className='italic'>
+          <p className='italic mt-0'>
             <small>{meta.description}</small>
           </p>
-          <div className='flex flex-col	pt-1 pb-3 text-sm font-thin uppercase text-stone-500 dark:text-stone-400'>
+          <div className='flex flex-col	pt-1 pb-0 text-sm font-thin uppercase text-stone-500 dark:text-stone-400'>
             <time dateTime={datetime.tag}>{datetime.full}</time>
             {meta.lastUpdateDate ? (
               <time dateTime={datetime.tag}>Last updated on {parseDate(meta.lastUpdateDate).full}</time>
