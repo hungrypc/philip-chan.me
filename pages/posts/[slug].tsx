@@ -13,7 +13,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false, // 404
+    fallback: false,
   }
 }
 

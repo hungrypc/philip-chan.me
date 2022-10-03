@@ -10,9 +10,10 @@ import { getAllNotesMeta, getNote } from '@utils/loadMDX'
 export const getStaticPaths = async () => {
   const notes = await getAllNotesMeta()
   const paths = notes.map(({ slug }) => ({ params: { slug } }))
+
   return {
     paths,
-    fallback: false, // 404
+    fallback: false,
   }
 }
 
@@ -27,6 +28,7 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 export const Post: React.FC<Props> = ({ meta, code }) => {
   const Component = useMemo(() => getMDXComponent(code), [code])
+
   return (
     <PostPage meta={meta}>
       <Component components={components} />

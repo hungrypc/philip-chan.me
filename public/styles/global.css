@@ -135,7 +135,7 @@
 
   .link-tag-selected {
     height: max-content;
-    @apply px-1 font-light transition-colors duration-150 ease-linear rounded-sm bg-hovered-tag focus:bg-unhovered-tag hover:bg-unhovered-tag  dark:active:bg-unhovered-tag dark:focus:bg-unhovered-tag dark:active:bg-unhovered-tag dark:bg-hovered-tag-dark dark:hover:text-white;
+    @apply px-1 font-light transition-colors duration-150 ease-linear rounded-sm bg-hovered-tag focus:bg-unhovered-tag hover:bg-unhovered-tag  dark:focus:bg-unhovered-tag dark:active:bg-unhovered-tag dark:bg-hovered-tag-dark dark:hover:text-white;
   }
 
   .button {
@@ -147,7 +147,6 @@
     -webkit-text-fill-color: transparent;
     background-size: 180%;
     animation: gradient 8s ease infinite;
-    @apply bg-iridescent;
   }
 
   article :is(h1, h2, h3, h4, h5, h6) {
@@ -156,7 +155,7 @@
   }
 
   h2 {
-    @apply text-xl;
+    @apply text-2xl;
   }
   article h3 {
     @apply text-lg;

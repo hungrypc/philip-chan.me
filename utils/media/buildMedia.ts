@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { promises as fsPromises } from 'fs'
 import { join } from 'path'
 import glob from 'tiny-glob'
@@ -14,7 +13,7 @@ async function buildMedia() {
   const images: string[] = []
 
   for (const file of files) {
-    const [_, extension] = file.split('.')
+    const [, extension] = file.split('.')
 
     if (['WEBP', 'JPG', 'JPEG'].includes(extension?.toUpperCase())) {
       images.push(file)
@@ -27,13 +26,13 @@ async function buildMedia() {
   for (const image of images) {
     const name = `file${doubleDigit(count)}`
     imgNames.push(name)
-    exports.push(`import ${name} from '../public/media/${image}'\n`)
+    exports.push(`import ${name} from '../../public/media/${image}'\n`)
     count += 1
   }
 
   exports.push(`\nexport const images = [${imgNames.toString()}]\n`)
 
-  await fsPromises.writeFile(join('.', 'utils', 'media.ts'), exports.join(''), 'utf-8')
+  await fsPromises.writeFile(join('.', 'utils', 'media', 'media.ts'), exports.join(''), 'utf-8')
 }
 
 buildMedia()

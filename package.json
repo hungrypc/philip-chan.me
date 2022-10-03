@@ -17,7 +17,7 @@
     "build": "next build && next export",
     "start": "next start",
     "export": "next build && next export",
-    "build:media": "esno utils/buildMedia.ts",
+    "build:media": "esno utils/media/buildMedia.ts",
     "lint": "next lint",
     "lint:base": "eslint --config .eslintrc.js --cache",
     "lint:check": "yarn lint:base \"./**/*.{ts,tsx}\"",
@@ -43,6 +43,7 @@
     "rehype": "^12.0.1",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-slug": "^5.0.1",
+    "rehype-toc": "^3.0.2",
     "remark-gfm": "^3.0.1",
     "remark-prism": "^1.3.6"
   },
