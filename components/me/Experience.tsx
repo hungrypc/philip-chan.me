@@ -24,10 +24,10 @@ export const Experience: React.FC = () => (
       const [parsedStartDate, parsedEndDate] = [parseDate(startDate), parseDate(endDate)]
       return (
         <li key={company} className='pb-2 pl-0 mb-4 border-b dark:border-stone-900 border-stone-200 before:contents'>
-          <section className='flex justify-between gap-6'>
-            <div className='flex flex-col text-center pl-1 text-sm text-stone-600 dark:text-stone-400'>
+          <section className='flex flex-col sm:flex-row justify-between gap-1 sm:gap-6'>
+            <div className='sm:pl-1 sm:pt-1 flex sm:flex-col gap-1 sm:gap-0 text-center text-sm text-stone-600 dark:text-stone-400'>
               <time dateTime={parsedStartDate.tag}>{parsedStartDate.short}</time>
-              <span>{' - '}</span>
+              <div className='sm:leading-4'>{'-'}</div>
               <time dateTime={parsedEndDate.tag}>{parsedEndDate.short}</time>
             </div>
             <div className='max-w-11/12'>
