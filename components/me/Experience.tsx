@@ -5,7 +5,7 @@ const experience = [
     company: 'Guiker',
     location: 'remote',
     position: 'Full-stack Software Developer',
-    startDate: 'Jul 2020',
+    startDate: 'Jul/2020',
     endDate: 'Present',
     details: (
       <p>
