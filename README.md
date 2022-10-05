@@ -10,6 +10,7 @@
 
 ## todo
 - sidebar toc
+  + remove rehypeTOC, use custom TOC Plugin
 - cloudfront cdn, images
 - spline? me section
 

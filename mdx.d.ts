@@ -1,4 +1,4 @@
-interface PostMeta {
+interface ContentMeta {
   title: string
   description: string
   slug: string

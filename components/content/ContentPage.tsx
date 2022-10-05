@@ -2,17 +2,19 @@
 import Head from 'next/head'
 import { NextSeo } from 'next-seo'
 
+import { NavSidebar } from '@components/navigation/NavSidebar'
 import { parseDate } from '@utils/date'
 import { formatTags } from '@utils/tags'
 
 import { Tag } from './Tag'
 
 type Props = {
-  meta: PostMeta
+  meta: ContentMeta
+  toc: { id: string; text: string }[]
   children?: React.ReactNode
 }
 
-export const PostPage: React.FC<Props> = ({ meta, children }) => {
+export const ContentPage: React.FC<Props> = ({ meta, toc, children }) => {
   const datetime = parseDate(meta.date)
 
   return (
@@ -60,7 +62,10 @@ export const PostPage: React.FC<Props> = ({ meta, children }) => {
             <Tag key={index} tag={tag}></Tag>
           ))}
         </div>
-        {children}
+        <div className='grid grid-cols-5 grid-rows-1 gap-6'>
+          <div className='sm:col-span-4 col-span-5'>{children}</div>
+          {toc?.length > 1 && <NavSidebar toc={toc} />}
+        </div>
       </article>
     </>
   )

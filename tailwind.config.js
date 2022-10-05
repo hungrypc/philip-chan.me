@@ -26,7 +26,6 @@ module.exports = {
     extend: {
       colors: {
         ...colors,
-        purple: '#3f3cbb',
         hovered: '#ded3c1',
         unhovered: '#e7dfd2',
         'hovered-tag': '#cadcd3',

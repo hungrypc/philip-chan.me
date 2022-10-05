@@ -20,7 +20,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
       <link rel='preload' href='/fonts/iAWriterQuattroV.ttf' as='font' crossOrigin='' type='font/ttf' />
     </Head>
     <SEO />
-    <div className='w-full h-full'>
+    <div id='root' className='w-full h-full'>
       <TagsProvider>
         <NavBar />
         {/* <AnimatePresence exitBeforeEnter initial={false}> */}

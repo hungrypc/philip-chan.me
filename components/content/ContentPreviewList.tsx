@@ -6,7 +6,7 @@ import { formatTags } from '@utils/tags'
 
 import { ResetTagsButton, Tag, TagList, useTags } from './'
 
-export const PostPreview: React.FC<PostMeta> = ({ slug, title, date, tags }) => {
+export const ContentPreview: React.FC<ContentMeta> = ({ slug, title, date, tags }) => {
   const router = useRouter()
   const datetime = parseDate(date)
 
@@ -27,7 +27,7 @@ export const PostPreview: React.FC<PostMeta> = ({ slug, title, date, tags }) => 
   )
 }
 
-export const PostPreviewList: React.FC<{ posts: PostMeta[] }> = ({ posts }) => {
+export const ContentPreviewList: React.FC<{ posts: ContentMeta[] }> = ({ posts }) => {
   const { tags: selectedTags } = useTags()
   const showAllPosts = selectedTags.size === 0
   const postTagCountMap = posts.reduce((tagCountMap, post) => {
@@ -51,7 +51,7 @@ export const PostPreviewList: React.FC<{ posts: PostMeta[] }> = ({ posts }) => {
     )
   }
 
-  const postsByYear: Record<string, PostMeta[]> = {}
+  const postsByYear: Record<string, ContentMeta[]> = {}
 
   fileredPosts.forEach(post => {
     const year = new Date(post.date).getFullYear()
@@ -70,7 +70,7 @@ export const PostPreviewList: React.FC<{ posts: PostMeta[] }> = ({ posts }) => {
               <h2 className='pl-1 text-lg font-semibold'>{year}</h2>
               <ul>
                 {posts.map(post => {
-                  return <PostPreview key={post.slug} {...post} />
+                  return <ContentPreview key={post.slug} {...post} />
                 })}
               </ul>
             </div>

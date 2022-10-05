@@ -1,2 +1,2 @@
+export * from './getTOC'
 export * from './rehypeAutolinkPlugin'
-export * from './rehypeTocPlugin'
