@@ -21,7 +21,7 @@ const Notes: React.FC<Props> = ({ notes }) => {
         openGraph={{ url: 'https://philip-chan.me/notes' }}
       />
 
-      <div className='w-full sm:max-w-[100ch] m-auto px-5 py-16 flex flex-col justify-center items-center'>
+      <div className='m-auto flex w-full flex-col items-center justify-center px-5 py-16 sm:max-w-[100ch]'>
         <ContentPreviewList posts={notes} />
       </div>
     </>

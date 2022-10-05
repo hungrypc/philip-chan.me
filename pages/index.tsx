@@ -31,7 +31,7 @@ const Home: React.FC<Props> = ({ code }) => {
   const Component = useMemo(() => getMDXComponent(code), [code])
 
   return (
-    <article className='max-w-[100ch] mx-auto pt-12 pb-28 px-5'>
+    <article className='mx-auto max-w-[100ch] px-5 pt-12 pb-28'>
       <Component components={mdxComponents} />
     </article>
   )

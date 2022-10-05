@@ -5,7 +5,6 @@ if (process.env.NODE_ENV === 'development') {
 import '@public/styles/font.css'
 import '@public/styles/global.css'
 
-// import { AnimatePresence } from 'framer-motion'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
@@ -20,14 +19,12 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
       <link rel='preload' href='/fonts/iAWriterQuattroV.ttf' as='font' crossOrigin='' type='font/ttf' />
     </Head>
     <SEO />
-    <div id='root' className='w-full h-full'>
+    <div id='root' className='h-full w-full'>
       <TagsProvider>
         <NavBar />
-        {/* <AnimatePresence exitBeforeEnter initial={false}> */}
         <main className='w-full'>
           <Component {...pageProps} />
         </main>
-        {/* </AnimatePresence> */}
       </TagsProvider>
     </div>
   </>

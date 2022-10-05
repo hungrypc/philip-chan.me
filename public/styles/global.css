@@ -67,6 +67,7 @@
   html,
   body,
   #__next {
+    scroll-behavior: smooth;
     @apply w-full h-full;
     --sc-width: 6px;
   }
@@ -123,10 +124,6 @@
     box-shadow: inset 0 -1px 0 0 currentColor;
   }
 
-  .tocHeader {
-    @apply transition-colors duration-150 opacity-100 ease-linear text-stone-800 dark:text-stone-100;
-  }
-
   .link-btn {
     height: max-content;
     @apply px-1 font-light transition-colors duration-150 ease-linear rounded-sm bg-unhovered hover:bg-hovered dark:hover:bg-hovered-dark dark:hover:text-white dark:bg-unhovered-dark;
@@ -140,6 +137,14 @@
   .link-tag-selected {
     height: max-content;
     @apply px-1 font-light transition-colors duration-150 ease-linear rounded-sm bg-hovered-tag focus:bg-unhovered-tag hover:bg-unhovered-tag  dark:focus:bg-unhovered-tag dark:active:bg-unhovered-tag dark:bg-hovered-tag-dark dark:hover:text-white;
+  }
+
+  .link-toc-active {
+    @apply font-semibold opacity-100;
+  }
+
+  .link-toc-active::after {
+    content: '«';
   }
 
   .button {
@@ -161,6 +166,7 @@
   h2 {
     @apply text-2xl;
   }
+
   article h3 {
     @apply text-lg;
   }
@@ -188,6 +194,23 @@
   article li::before {
     content: '»';
     @apply absolute left-1 opacity-90;
+  }
+
+  aside li {
+    @apply mb-2 cursor-pointer text-right text-sm text-stone-800 transition-opacity duration-200 ease-linear dark:text-stone-300;
+  }
+
+  aside li:hover {
+    @apply opacity-100 text-stone-800 dark:text-stone-100;
+  }
+
+  aside li::before {
+    content: '';
+  }
+
+  aside li::after {
+    content: '';
+    @apply absolute -right-4;
   }
 }
 

@@ -18,11 +18,12 @@ module.exports = {
     amd: true,
     node: true,
   },
-  plugins: ['react', 'prettier', 'simple-import-sort', '@typescript-eslint'],
+  plugins: ['react', 'prettier', 'tailwindcss', 'simple-import-sort', '@typescript-eslint'],
   extends: [
     'eslint:recommended',
     'plugin:prettier/recommended',
     'plugin:react/recommended',
+    'plugin:tailwindcss/recommended',
     'plugin:@typescript-eslint/recommended',
     'next',
     'next/core-web-vitals',

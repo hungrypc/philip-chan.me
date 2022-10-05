@@ -7,7 +7,7 @@ import { Props } from 'react-toggle-dark-mode'
 import { setLocalStorage } from '@utils/localStorage'
 
 const DarkModeSwitch = dynamic<Props>(() => import('react-toggle-dark-mode').then(mod => mod.DarkModeSwitch), {
-  loading: () => <div className='w-5 h-5'></div>,
+  loading: () => <div className='h-5 w-5'></div>,
 })
 
 type ColorTheme = 'light' | 'dark'
@@ -45,7 +45,7 @@ export const ThemeSwitch: React.FC = () => {
       <Head>
         <meta name='theme-color' content={theme === 'dark' ? '#000' : '#fdfdfd'} />
       </Head>
-      <div className='flex items-center w-5 h-5 bg-transparent'>
+      <div className='flex h-5 w-5 items-center bg-transparent'>
         <DarkModeSwitch checked={theme === 'dark'} onChange={switchTheme} moonColor='white' sunColor='black' />
       </div>
     </>
