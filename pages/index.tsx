@@ -9,16 +9,18 @@ import path from 'path'
 import { Break } from '@components/layout'
 import { components } from '@components/MDXComponents'
 import { About, Experience } from '@components/me'
-import { getAllPostsMeta, loadMDX } from '@utils/loadMDX'
+import { loadMDX } from '@utils/loadMDX'
 
 export const getStaticProps = async () => {
   const file = path.resolve(process.cwd(), 'content', 'home.mdx')
   const source = fs.readFileSync(file, 'utf-8')
+  const { code } = await loadMDX(source, false)
 
-  const { code } = await loadMDX(source)
-  const posts = await getAllPostsMeta()
+  /* load posts on Home */
+  // const posts = await getAllPostsMeta()
+  // return { props: { code, posts } }
 
-  return { props: { code, posts } }
+  return { props: { code } }
 }
 
 const mdxComponents = { ...components, About, Experience, Break, Image }

@@ -31,8 +31,8 @@ export const NavBar: React.FC = () => {
             {routes.map(({ route, title }) => (
               <Link key={route} href={route}>
                 <a
-                  className={`capitalize transition-opacity duration-100 ease-linear hover:opacity-75 ${
-                    isActive(route) ? '' : 'opacity-50'
+                  className={`capitalize transition-opacity duration-100 ease-linear hover:opacity-100 ${
+                    isActive(route) ? '' : 'opacity-75'
                   }`}
                   onClick={resetTags}
                 >

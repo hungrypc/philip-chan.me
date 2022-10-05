@@ -1,51 +1,110 @@
-export {}
-// import Link from 'next/link'
-// import { useRouter } from 'next/router'
+import React, { useEffect, useRef } from 'react'
 
-// import { useTags } from '../content'
-// import { ThemeSwitch } from '../layout'
-// import { CurrentActivity } from '../me'
+import { debounce } from 'lodash'
 
-// const routes = [
-//   { route: '/posts', title: 'posts' },
-//   { route: '/notes', title: 'notes' },
-// ]
+import { signal } from '@preact/signals'
+import { safelyGetWindow } from '@utils/safely-get-window'
 
-// export const NavSidebar: React.FC = () => {
-//   const router = useRouter()
-//   const { resetTags } = useTags()
+type ContainerAnchorPoints = {
+  containerNodeScrollTop: number
+  containerNodeScrollBottom: number
+}
 
-//   const isActive = (pathname: string) => {
-//     return router.asPath.includes(pathname)
-//   }
+type Props = {
+  toc: { id: string; text: string }[]
+}
 
-//   return (
-//     <div className='flex'>
-//       <aside className='h-screen sticky top-0'></aside>
-//       {/* <div className='fixed h-20 z-40 w-full flex justify-between backdrop-blur-[20px] backdrop-saturate-150 bg-[#F9F9F950] dark:bg-[#0f101050]'>
-//         <nav className='w-full sm:max-w-[100ch] m-auto sm:grid md:flex px-5 justify-between items-center '>
-//           <Link href='/' passHref>
-//             <a title='Home' aria-label='Home'>
-//               <CurrentActivity />
-//             </a>
-//           </Link>
-//           <div className='flex items-center gap-5'>
-//             {routes.map(({ route, title }) => (
-//               <Link key={route} href={route}>
-//                 <a
-//                   className={`capitalize transition-opacity duration-100 ease-linear hover:opacity-75 ${
-//                     isActive(route) ? '' : 'opacity-50'
-//                   }`}
-//                   onClick={resetTags}
-//                 >
-//                   {title}
-//                 </a>
-//               </Link>
-//             ))}
-//             <ThemeSwitch />
-//           </div>
-//         </nav>
-//       </div> */}
-//     </div>
-//   )
-// }
+const activeItem = signal('')
+
+const TOCHeader: React.FC<{ id: string; children: React.ReactNode }> = ({ id, children }) => {
+  const anchorTarget = useRef<Element>()
+
+  const onClick = () => {
+    anchorTarget.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  useEffect(() => {
+    if (!anchorTarget.current) {
+      const element = document.getElementById(id) as HTMLElement
+      anchorTarget.current = element
+    }
+  })
+
+  return (
+    <div
+      className={`mb-2 text-sm text-right text-stone-800 dark:text-stone-300 hover:tocHeader transition-opacity transition-font duration-150 ease-linear cursor-pointer ${
+        activeItem.value === id ? 'opacity-100 font-semibold' : 'opacity-[.60]'
+      }`}
+      onClick={onClick}
+    >
+      {children}
+    </div>
+  )
+}
+
+export const NavSidebar: React.FC<Props> = ({ toc }) => {
+  const containerAnchorPoints = signal<ContainerAnchorPoints | undefined>(undefined)
+
+  const setContainerAnchorPoints = (containerNode: Element) => {
+    const containerNodeRect = containerNode.getBoundingClientRect()
+    const containerNodeScrollTop = containerNode.scrollTop
+    const containerNodeScrollBottom = containerNodeRect.height
+
+    containerAnchorPoints.value = { containerNodeScrollTop, containerNodeScrollBottom }
+  }
+
+  const getElementAnchorPoints = () => {
+    return toc.map(({ id }) => {
+      const anchorNode = document.getElementById(id) as HTMLElement
+      const anchorNodeRect = anchorNode?.getBoundingClientRect()
+
+      const anchorNodeScrollTop = anchorNodeRect.top
+      const anchorNodeScrollBottom = anchorNodeScrollTop + anchorNodeRect.height
+
+      return { id, anchorNodeScrollTop, anchorNodeScrollBottom }
+    })
+  }
+
+  const handleScroll = debounce(() => {
+    const anchorPoints = getElementAnchorPoints()
+    const { containerNodeScrollTop, containerNodeScrollBottom } = containerAnchorPoints.value as ContainerAnchorPoints
+
+    for (const element of anchorPoints) {
+      const { id, anchorNodeScrollTop, anchorNodeScrollBottom } = element
+
+      const isElementInTopHalfOfViewport = [
+        anchorNodeScrollTop < containerNodeScrollBottom,
+        anchorNodeScrollBottom > containerNodeScrollTop,
+      ].every(v => v)
+
+      if (isElementInTopHalfOfViewport || id === anchorPoints[anchorPoints.length]?.id) {
+        activeItem.value = id
+        break
+      }
+    }
+  }, 125)
+
+  useEffect(() => {
+    const containerNode = document.getElementById('root')
+    containerNode && setContainerAnchorPoints(containerNode)
+    handleScroll()
+    safelyGetWindow()?.addEventListener('scroll', handleScroll)
+
+    return () => {
+      safelyGetWindow()?.removeEventListener('scroll', handleScroll)
+      containerAnchorPoints.value = undefined
+    }
+  })
+
+  return (
+    <div className='hidden md:block relative'>
+      <aside className='sticky top-24 right-0'>
+        {toc.map(({ id, text }) => (
+          <TOCHeader key={id} id={id}>
+            {text}
+          </TOCHeader>
+        ))}
+      </aside>
+    </div>
+  )
+}

@@ -30,7 +30,7 @@ export const Experience: React.FC = () => (
               <time dateTime={parsedEndDate.tag}>{parsedEndDate.short}</time>
             </div>
             <div className='max-w-11/12'>
-              <h3 className='m-0 mb-1 text-base font-semi-bold'>{position}</h3>
+              <h3 className='m-0 mb-1 text-base font-semibold'>{position}</h3>
               <div className='text-sm text-stone-600 dark:text-stone-400'>{company}</div>
               <div className='mt-4 text-sm'>
                 {details}

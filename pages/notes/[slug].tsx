@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 
-import { PostPage } from '@components/content'
+import { ContentPage } from '@components/content'
 import { components } from '@components/MDXComponents'
 import { getAllNotesMeta, getNote } from '@utils/loadMDX'
 
@@ -11,29 +11,26 @@ export const getStaticPaths = async () => {
   const notes = await getAllNotesMeta()
   const paths = notes.map(({ slug }) => ({ params: { slug } }))
 
-  return {
-    paths,
-    fallback: false,
-  }
+  return { paths, fallback: false }
 }
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const slug = context.params?.slug as string
-  const post = await getNote(slug)
+  const note = await getNote(slug)
 
-  return { props: post }
+  return { props: note }
 }
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
-export const Post: React.FC<Props> = ({ meta, code }) => {
+export const Note: React.FC<Props> = ({ meta, toc, code }) => {
   const Component = useMemo(() => getMDXComponent(code), [code])
 
   return (
-    <PostPage meta={meta}>
+    <ContentPage meta={meta} toc={toc}>
       <Component components={components} />
-    </PostPage>
+    </ContentPage>
   )
 }
 
-export default Post
+export default Note
