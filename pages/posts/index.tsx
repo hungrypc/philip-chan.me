@@ -20,7 +20,7 @@ const Posts: React.FC<Props> = ({ posts }) => {
         canonical='https://philip-chan.me/posts'
         openGraph={{ url: 'https://philip-chan.me/posts' }}
       />
-      <div className='w-full sm:max-w-[100ch] m-auto px-5 py-16 flex flex-col justify-center items-center'>
+      <div className='m-auto flex w-full flex-col items-center justify-center px-5 py-16 sm:max-w-[100ch]'>
         <ContentPreviewList posts={posts} />
       </div>
     </>

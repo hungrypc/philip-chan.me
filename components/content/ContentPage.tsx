@@ -16,6 +16,7 @@ type Props = {
 
 export const ContentPage: React.FC<Props> = ({ meta, toc, children }) => {
   const datetime = parseDate(meta.date)
+  const shouldShowNavSidebar = toc.length > 1
 
   return (
     <>
@@ -46,10 +47,10 @@ export const ContentPage: React.FC<Props> = ({ meta, toc, children }) => {
           type='font/woff2'
         />
       </Head>
-      <article className='max-w-[100ch] mx-auto pt-12 pb-28 px-5'>
+      <article className='mx-auto max-w-[100ch] px-5 pt-12 pb-28'>
         <div className='pb-8'>
           <h1 className='mb-1 text-3xl font-black capitalize md:text-4xl'>{meta.title}</h1>
-          <p className='italic mt-0'>
+          <p className='mt-0 italic'>
             <small>{meta.description}</small>
           </p>
           <div className='flex flex-col	pt-1 pb-0 text-sm font-thin uppercase text-stone-500 dark:text-stone-400'>
@@ -63,8 +64,8 @@ export const ContentPage: React.FC<Props> = ({ meta, toc, children }) => {
           ))}
         </div>
         <div className='grid grid-cols-5 grid-rows-1 gap-6'>
-          <div className='col-span-5 md:col-span-4 '>{children}</div>
-          {toc?.length > 1 && <NavSidebar toc={toc} />}
+          <div className={`col-span-5 ${shouldShowNavSidebar ? 'md:col-span-4' : ''}`}>{children}</div>
+          {shouldShowNavSidebar && <NavSidebar toc={toc} />}
         </div>
       </article>
     </>

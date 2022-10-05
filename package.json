@@ -6,11 +6,12 @@
   "author": "hungrypc<philipchanhk626@gmail.com>",
   "license": "MIT",
   "keywords": [
+    "aws",
+    "mongodb",
     "next",
     "react",
-    "aws",
-    "typescript",
-    "mongodb"
+    "tailwindcss",
+    "typescript"
   ],
   "scripts": {
     "dev": "next dev",
@@ -21,13 +22,10 @@
     "lint": "next lint",
     "lint:base": "eslint --config .eslintrc.js --cache",
     "lint:check": "yarn lint:base \"./**/*.{ts,tsx}\"",
-    "lint:fix": "eslint --fix . --ignore-path ./.gitignore",
-    "prettier:check": "prettier  --config ./.prettierrc.js --check \"./**/*\"",
-    "prettier:fix": "yarn prettier:check --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" --ignore-path ./.gitignore"
+    "lint:fix": "eslint --fix . --ignore-path ./.gitignore"
   },
   "dependencies": {
     "@preact/signals": "^1.1.1",
-    "framer-motion": "^7.5.1",
     "fs": "^0.0.1-security",
     "light-date": "^1.2.0",
     "lodash": "^4.17.21",
@@ -63,6 +61,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-tailwindcss": "^3.6.2",
     "esno": "^0.16.3",
     "gray-matter": "^4.0.3",
     "husky": "^8.0.1",
@@ -70,6 +69,7 @@
     "next-sitemap": "^3.1.16",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "tailwindcss": "^3.1.7",
     "tiny-glob": "^0.2.9",
     "typescript": "4.7.4"

@@ -22,14 +22,14 @@ export const Experience: React.FC = () => (
     {experience.map(({ company, details, endDate, position, stack, startDate }) => {
       const [parsedStartDate, parsedEndDate] = [parseDate(startDate), parseDate(endDate)]
       return (
-        <li key={company} className='pb-2 pl-0 mb-4 border-b dark:border-stone-900 border-stone-200 before:contents'>
-          <section className='flex flex-col sm:flex-row justify-between gap-1 sm:gap-6'>
-            <div className='sm:pl-1 sm:pt-1 flex sm:flex-col gap-1 sm:gap-0 text-center text-sm text-stone-600 dark:text-stone-400'>
+        <li key={company} className='mb-4 border-b border-stone-200 pb-2 pl-0 before:contents dark:border-stone-900'>
+          <section className='flex flex-col justify-between gap-1 sm:flex-row sm:gap-6'>
+            <div className='flex gap-1 text-center text-sm text-stone-600 dark:text-stone-400 sm:flex-col sm:gap-0 sm:pl-1 sm:pt-1'>
               <time dateTime={parsedStartDate.tag}>{parsedStartDate.short}</time>
               <div className='sm:leading-4'>{'-'}</div>
               <time dateTime={parsedEndDate.tag}>{parsedEndDate.short}</time>
             </div>
-            <div className='max-w-11/12'>
+            <div>
               <h3 className='m-0 mb-1 text-base font-semibold'>{position}</h3>
               <div className='text-sm text-stone-600 dark:text-stone-400'>{company}</div>
               <div className='mt-4 text-sm'>

@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const colors = require('tailwindcss/colors')
 const plugin = require('tailwindcss/plugin')
 const hoverPlugin = plugin(function ({ addVariant, e, postcss }) {
   addVariant('hover', ({ container, separator }) => {
@@ -14,18 +13,17 @@ const hoverPlugin = plugin(function ({ addVariant, e, postcss }) {
 
 module.exports = {
   mode: 'jit',
-  purge: [
+  content: [
     './pages/**/*.{jsx,tsx}',
     './components/**/*.{jsx,tsx}',
-    './content/**/*.{mdx}',
-    './posts/**/*.{mdx}',
-    './notes/**/*.{mdx}',
+    './content/**/*.mdx',
+    './posts/**/*.mdx',
+    './notes/**/*.mdx',
   ],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        ...colors,
         hovered: '#ded3c1',
         unhovered: '#e7dfd2',
         'hovered-tag': '#cadcd3',

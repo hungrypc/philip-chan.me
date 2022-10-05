@@ -10,9 +10,9 @@ interface HtmlElementNode {
 
 const headings = ['h2']
 
-export const getTOC = (toc: { id: string; text: string }[], renderTOC: boolean) => () => {
+export const getTOC = (toc: { id: string; text: string }[], shouldRenderTOC: boolean) => () => {
   return (tree: HtmlElementNode) => {
-    if (renderTOC) {
+    if (shouldRenderTOC) {
       visit(tree, 'element', (node: HtmlElementNode) => {
         if (headings.includes(node.tagName)) {
           const id = node.properties.id

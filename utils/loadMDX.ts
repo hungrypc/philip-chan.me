@@ -14,7 +14,7 @@ const RootPath = process.cwd()
 const PostPath = path.join(RootPath, 'posts')
 const NotePath = path.join(RootPath, 'notes')
 
-export async function loadMDX(source: string, renderTOC = true) {
+export async function loadMDX(source: string, shouldRenderTOC = true) {
   const toc: { id: string; text: string }[] = []
   const bundle = await bundleMDX({
     source,
@@ -24,7 +24,7 @@ export async function loadMDX(source: string, renderTOC = true) {
         ...(options?.rehypePlugins ?? []),
         rehypeSlug,
         [rehypeAutolink, autoLinkHeadingsOptions],
-        getTOC(toc, renderTOC),
+        getTOC(toc, shouldRenderTOC),
       ]
       return options
     },

@@ -19,9 +19,9 @@ export const NavBar: React.FC = () => {
   }
 
   return (
-    <header className='relative w-full h-16'>
-      <div className='fixed h-20 z-40 w-full flex justify-between backdrop-blur-[20px] backdrop-saturate-150 bg-[#F9F9F950] dark:bg-[#0f101050]'>
-        <nav className='w-full sm:max-w-[100ch] m-auto sm:grid md:flex px-5 justify-between items-center '>
+    <header className='relative h-16 w-full'>
+      <div className='fixed z-40 flex h-20 w-full justify-between bg-[#F9F9F950] backdrop-blur-[20px] backdrop-saturate-150 dark:bg-[#0f101050]'>
+        <nav className='m-auto w-full items-center justify-between px-5 sm:grid sm:max-w-[100ch] md:flex '>
           <Link href='/' passHref>
             <a title='Home' aria-label='Home'>
               <CurrentActivity />

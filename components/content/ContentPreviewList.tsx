@@ -13,11 +13,11 @@ export const ContentPreview: React.FC<ContentMeta> = ({ slug, title, date, tags 
   return (
     <li className='my-8'>
       <Link href={`${router.asPath}/${slug}`}>
-        <a className='flex items-center p-1 capitalize transition-colors duration-200 rounded outline-none'>
-          <p className='text-sm mr-8 min-w-[50px]'>
+        <a className='flex items-center rounded p-1 capitalize outline-none transition-colors duration-200'>
+          <p className='mr-8 min-w-[50px] text-sm'>
             <time dateTime={datetime.tag}>{datetime.semi}</time>
           </p>
-          <h3 className='font-light link-btn'>{title}</h3>
+          <h3 className='link-btn font-light'>{title}</h3>
         </a>
       </Link>
       {formatTags(tags).map((tag, index) => (
