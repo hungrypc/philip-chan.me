@@ -63,8 +63,8 @@ export const ContentPage: React.FC<Props> = ({ meta, toc, children }) => {
           ))}
         </div>
         <div className='grid grid-cols-5 grid-rows-1 gap-6'>
-          <div className='sm:col-span-4 col-span-5'>{children}</div>
-          {toc?.length > 1 && <NavSidebar toc={toc} />}
+          <div className='col-span-5 md:col-span-4 '>{children}</div>
+          <div className='hidden md:block'>{toc?.length > 1 && <NavSidebar toc={toc} />}</div>
         </div>
       </article>
     </>
