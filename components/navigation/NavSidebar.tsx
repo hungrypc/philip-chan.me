@@ -97,7 +97,7 @@ export const NavSidebar: React.FC<Props> = ({ toc }) => {
   })
 
   return (
-    <div className='relative'>
+    <div className='hidden md:block relative'>
       <aside className='sticky top-24 right-0'>
         {toc.map(({ id, text }) => (
           <TOCHeader key={id} id={id}>
