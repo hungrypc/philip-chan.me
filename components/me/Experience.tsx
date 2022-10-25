@@ -5,12 +5,12 @@ const experience = [
     company: 'Guiker',
     position: 'Full-stack Software Developer',
     startDate: 'Jul/2020',
-    endDate: 'Present',
+    endDate: 'Nov/2022',
     details: (
       <p>
         Guiker is a software platform on which tenants and landlords are able to connect, sign relevant documents, and
         pay/receive rent throughout the lease term. Responsibilities include project ownership, implementation and
-        maintanence of various (micro) services, building out user interface, and assisting in product-ops support.
+        maintanence of various (micro) services, building out product interface, and assisting in product-ops support.
       </p>
     ),
     stack: 'React, TypeScript, AWS, MongoDB, MySQL',

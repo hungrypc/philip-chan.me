@@ -9,8 +9,7 @@
 - [mdx-bundler](https://github.com/kentcdodds/mdx-bundler)
 
 ## todo
-- sidebar toc
-  + remove rehypeTOC, use custom TOC Plugin
+- analytics script
 - cloudfront cdn, images
 - spline? me section
 
