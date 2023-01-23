@@ -15,6 +15,20 @@ const experience = [
     ),
     stack: 'React, TypeScript, AWS, MongoDB, MySQL',
   },
+  {
+    company: 'Yoop',
+    position: 'Backend Software Engineer',
+    startDate: 'Dec/2022',
+    endDate: 'Present',
+    details: (
+      <p>
+        Yoop is a platform that offers the event experience with ticketing solutions for fans through video attendance
+        and e-solution, replacing tickets with tokens, releasing a robust suite creator tools, streamlining event
+        inventory distribution, and building the first trusted and transparent fan journey.
+      </p>
+    ),
+    stack: 'Spring, Java, AWS, Redis, MySQL',
+  },
 ]
 
 export const Experience: React.FC = () => (
