@@ -47,7 +47,7 @@ export const ContentPage: React.FC<Props> = ({ meta, toc, children }) => {
           type='font/woff2'
         />
       </Head>
-      <article className='mx-auto max-w-[100ch] px-5 pt-12 pb-28'>
+      <article id='content-article' className='mx-auto max-w-[100ch] px-5 pt-12 pb-28'>
         <div className='pb-8'>
           <h1 className='mb-1 text-3xl font-black capitalize md:text-4xl'>{meta.title}</h1>
           <p className='mt-0 italic'>
