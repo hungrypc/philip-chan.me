@@ -83,3 +83,27 @@
   font-weight: 400;
   src: url(/fonts/JetBrainsMono-Regular.woff2) format('woff2');
 }
+
+@font-face {
+  font-family: 'EBGaramond-Italic';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/fonts/EBGaramond-Italic.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'GaramondPremrPro';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/fonts/GaramondPremrPro.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Poppins-Light';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(/fonts/Poppins-Light.ttf) format('ttf');
+}

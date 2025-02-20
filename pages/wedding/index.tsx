@@ -2,8 +2,6 @@ if (process.env.NODE_ENV === 'development') {
   require('preact/debug')
 }
 
-import '@public/styles/wedding.css'
-
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
