@@ -10,7 +10,8 @@ const experience = [
       <p>
         Worked on functionalities for the platform that enabled users to manage their shipping and logistics needs.
         Features include third-party e-commerce API integrations, re-building billing system, bulk import packages via
-        label scanner with text-recognition. Overseeing and conducting migration of legacy system to new architecture.
+        label scanner with text-recognition. Overseeing and conducting full migration of legacy system to new
+        architecture whilst continuing to develop current services for client needs.
       </p>
     ),
     stack: 'Typescript, Nodejs, React, GCloud, Firebase, PostgreSQL',
@@ -23,10 +24,10 @@ const experience = [
     details: (
       <p>
         Designed architecture and implemented system migration for multi-region data management, compliant with GDPR to
-        enable expansion into Europe. Improved infrastructure tools to automate and deploy services, resulting in
-        quicker disaster recovery response time, as well as simplified management of deploying services across regions.
-        Built automated system to scale resources based on custom metrics designed within the context of ticketing,
-        making resource management efficient and reducing costs.
+        enable expansion into Europe. Improved infrastructure tools, resulting in quicker disaster recovery response
+        time and a simplified process for cross-region deployment. Built automated system to scale resources based on
+        custom metrics specifically designed within the context of ticketing, making resource management efficient and
+        cost-effective.
       </p>
     ),
     stack: 'Java, Spring, Terraform, AWS, Redis, MySQL',
