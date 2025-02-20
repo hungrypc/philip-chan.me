@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export const Header: React.FC = () => {
+export const WeddingNav: React.FC = () => {
   return (
     <header className='relative h-16 w-full'>
       <div className='fixed z-40 flex h-20 w-full justify-between bg-[#F9F9F950] backdrop-blur-[20px] backdrop-saturate-150'>

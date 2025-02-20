@@ -5,7 +5,7 @@ if (process.env.NODE_ENV === 'development') {
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import { Header } from './Header'
+import { WeddingNav } from '@components/wedding'
 
 const Wedding: React.FC<AppProps> = () => (
   <>
@@ -15,7 +15,7 @@ const Wedding: React.FC<AppProps> = () => (
       <link rel='preload' href='/fonts/EBGaramond-Italic.ttf' as='font' crossOrigin='' type='font/ttf' />
     </Head>
     <div id='wedding-root' className='h-full w-full'>
-      <Header />
+      <WeddingNav />
     </div>
   </>
 )
