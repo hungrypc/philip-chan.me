@@ -8,9 +8,12 @@ export const useGetOnScreenElements = (elements: Element[], options?: Intersecti
     observer.current = new IntersectionObserver(entries => {
       setIntersectingElements(() => {
         const elementsWithinViewbox: Element[] = []
-        entries.forEach(entry => {
+
+        entries.forEach((entry: IntersectionObserverEntry) => {
+          // console.log(entry)
           entry.isIntersecting && elementsWithinViewbox.push(entry.target)
         })
+
         return elementsWithinViewbox
       })
     }, options)
@@ -21,6 +24,8 @@ export const useGetOnScreenElements = (elements: Element[], options?: Intersecti
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+  // console.log('-------RERENDER-------')
+  // console.log(intersectingElements)
 
   return intersectingElements
 }
