@@ -9,3 +9,8 @@ interface ContentMeta {
   date: string
   lastUpdateDate?: string
 }
+
+type TOCItem = {
+  id: string
+  text: string
+}

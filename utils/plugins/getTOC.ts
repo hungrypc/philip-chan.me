@@ -8,6 +8,7 @@ interface HtmlElementNode {
   children?: HtmlElementNode[]
 }
 
+// @TODO build out plugin for subheader
 const headings = ['h2']
 
 export const getTOC = (toc: { id: string; text: string }[], shouldRenderTOC: boolean) => () => {
