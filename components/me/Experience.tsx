@@ -3,7 +3,7 @@ import { parseDate } from '@utils/date'
 const experience = [
   {
     company: 'Shippie',
-    position: 'Sr. Full-stack Software Engineer',
+    position: 'Sr. Software Engineer (full-stack)',
     startDate: 'Nov/2024',
     endDate: 'Present',
     details: (
@@ -17,7 +17,7 @@ const experience = [
   },
   {
     company: 'Yoop',
-    position: 'Backend Software Engineer',
+    position: 'Software Engineer (backend)',
     startDate: 'Dec/2022',
     endDate: 'Present',
     details: (
@@ -33,7 +33,7 @@ const experience = [
   },
   {
     company: 'Guiker',
-    position: 'Full-stack Software Developer',
+    position: 'Software Developer (full-stack)',
     startDate: 'Jul/2020',
     endDate: 'Nov/2022',
     details: (
