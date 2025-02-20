@@ -22,7 +22,7 @@ export const useVisibleAnchorItem = ({ toc }: { toc: TOCItem[] }) => {
 
     return results
   }, [toc])
-  const onScreenElements = useGetOnScreenElements(elements, { rootMargin: '-50px 0px -200px 0px' })
+  const onScreenElements = useGetOnScreenElements(elements)
 
   return onScreenElements[0]?.id ?? (activeItem.value || toc[0].id)
 }
