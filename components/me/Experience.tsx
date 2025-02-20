@@ -62,7 +62,7 @@ export const Experience: React.FC = () => (
             </div>
             <div>
               <h3 className='m-0 mb-1 text-base font-semibold'>{position}</h3>
-              <div className='text-sm text-stone-600 dark:text-stone-400'>{company}</div>
+              <div className='text-sm text-stone-600 dark:text-stone-400'>@ {company}</div>
               <div className='mt-4 text-sm'>
                 {details}
                 <p className='italic text-stone-600 dark:text-stone-400'>Stack: {stack}</p>
