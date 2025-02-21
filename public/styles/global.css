@@ -229,8 +229,10 @@ details {
   border: 2px solid #F2CFC2;
 }
 
+#wedding-root h1 {
+  font-size: 4em;
+}
 
-#wedding-root {
-  font-family: 'EBGaramond-Italic', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 
-    Liberation Mono, Courier New, monospace;
+#wedding-root h2 {
+  font-size: 2.2em;
 }

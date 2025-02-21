@@ -22,7 +22,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
     <div id='root' className='h-full w-full'>
       <TagsProvider>
         <NavBar />
-        <main className='w-full'>
+        <main className='h-full w-full'>
           <Component {...pageProps} />
         </main>
       </TagsProvider>
