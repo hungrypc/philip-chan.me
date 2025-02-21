@@ -34,7 +34,7 @@ const Wedding: React.FC<AppProps> = () => {
             {/* <div className='absolute max-h-fit scale-125 sm:scale-110 md:top-[-30vw] lg:top-[-61vw]'>
               <Image src={images[1]} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
             </div> */}
-            <div className='absolute max-h-fit md:top-[-30vw] lg:top-[-43vw]'>
+            <div className='absolute max-h-fit overflow-hidden md:top-[-30vw] lg:top-[-43vw]'>
               <Image src={image} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
             </div>
           </div>
