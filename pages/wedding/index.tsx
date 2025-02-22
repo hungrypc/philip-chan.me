@@ -11,7 +11,9 @@ import Link from 'next/link'
 import { WeddingNav } from '@components/wedding'
 import { images } from '@utils/media'
 
-const image = images[0]
+const homeImage = images.cover_bg1
+const homeImageC = images.cover_bg1c
+const thankyouImage = images.cover_bg2
 
 const Wedding: React.FC<AppProps> = () => {
   const [rootRef, setRootRef] = useState<HTMLDivElement | null>(null)
@@ -27,13 +29,16 @@ const Wedding: React.FC<AppProps> = () => {
       <div id='wedding-root' className='h-full w-full' ref={registerRef}>
         <WeddingNav rootRef={rootRef} />
         <section id='home' className='w-full overflow-hidden bg-black text-[#f2ebe2] sm:h-screen'>
-          {/* <div className='relative h-full w-full overflow-hidden'>
-            <div className='absolute max-h-fit scale-125 sm:scale-110 md:top-[-30vw] lg:top-[-61vw]'>
-              <Image src={images[1]} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
-            </div>
-          </div> */}
-          <div className='flex h-full w-full justify-center overflow-hidden align-middle'>
-            <Image src={image} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
+          <div className='overlapGrid h-full w-full justify-center overflow-hidden align-middle'>
+            <Image
+              className='relative z-10 opacity-0 transition-opacity duration-700 ease-linear hover:opacity-100'
+              src={homeImageC}
+              alt='bg-cover'
+              placeholder='blur'
+              objectFit='cover'
+              priority
+            />
+            <Image className='relative' src={homeImage} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
           </div>
         </section>
         <section id='details' className='w-full scroll-mt-24 scroll-pt-24 bg-[#f2ebe2] p-24 text-black sm:p-12'>
@@ -96,13 +101,13 @@ const Wedding: React.FC<AppProps> = () => {
                   within walking distance from the Vancouver Club.
                 </div>
                 <div>
-                  Being in the heart of downtown Vancouver, the venue is only a block or two away from{' '}
+                  The venue is also only a block or two away from{' '}
                   <span className='underline'>
                     <Link href='https://shorturl.at/RVJfr'>
                       <a target='_blank'>Waterfront Station</a>
                     </Link>
                   </span>
-                  , making it easily accessible by train as well.
+                  , making it easily accessible by train for any who may want to come by public transport.
                 </div>
                 <div>
                   For those driving, metered parking is available behind the Club along West Cordova Street.
@@ -115,7 +120,7 @@ const Wedding: React.FC<AppProps> = () => {
         </section>
         <section
           id='registry'
-          className='h-full min-h-[600px] w-full scroll-mt-24 scroll-pt-24 bg-[#f2ebe2] p-12 pb-24 text-black sm:h-min'
+          className='h-full min-h-[400px] w-full scroll-mt-24 scroll-pt-24 bg-[#f2ebe2] p-12 pb-24 text-black sm:h-min'
         >
           <div className='mx-auto text-center sm:max-w-[120ch]'>
             <h1 className='forum-regular'>REGISTRY</h1>
@@ -126,14 +131,24 @@ const Wedding: React.FC<AppProps> = () => {
               </div>
               <div>
                 While we don&apos;t have a traditional registry, we would be grateful for any contributions toward our
-                future together. Your generosity will help us as we begin this exciting new chapter. We will be
-                accepting e-transfers to <span className='underline'>philipchanhk626@gmail.com</span>.
+                future together. Your generosity will help us as we begin this exciting new chapter. Interac e-transfers
+                are accepted at <span className='underline'>philipchanhk626@gmail.com</span>.
               </div>
               <br />
               <div>
                 For those who are from out of town or who would prefer a cash, we will also be accepting cash gifts in
                 red envelopes.
               </div>
+            </div>
+          </div>
+        </section>
+        <section
+          id='thankyou'
+          className='h-full max-h-[calc(100vh-6rem)] w-full overflow-hidden bg-black text-[#f2ebe2]'
+        >
+          <div className='relative h-full w-full overflow-hidden'>
+            <div className='absolute max-h-fit scale-125 sm:scale-110 md:top-[-30vw] lg:top-[-60vw]'>
+              <Image src={thankyouImage} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
             </div>
           </div>
         </section>

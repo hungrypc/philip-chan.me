@@ -236,3 +236,15 @@ details {
 #wedding-root h2 {
   font-size: 2.2em;
 }
+
+.overlapGrid {
+  display: grid;
+  grid-template-areas: "overlay";
+}
+
+.overlapGrid > span {
+  grid-area: overlay;
+}
+.overlapGrid > div {
+  grid-area: overlay;
+}
