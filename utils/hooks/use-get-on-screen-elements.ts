@@ -23,7 +23,7 @@ export const useGetOnScreenElements = (elements: Element[], options?: Intersecti
     return () => {
       observer.current && observer.current.disconnect()
     }
-  }, [window])
+  }, [])
 
   return intersectingElements
 }
