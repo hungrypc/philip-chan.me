@@ -1,16 +1,13 @@
-import { promises as fsPromises } from 'fs'
-import { join } from 'path'
-import glob from 'tiny-glob'
+/* eslint-disable @typescript-eslint/no-var-requires */
+const { promises: fsPromises } = require('fs')
+const { join } = require('path')
+const glob = require('tiny-glob')
 
 const RootDir = '.'
 
-function doubleDigit(n: number) {
-  return n > 9 ? '' + n : '0' + n
-}
-
 async function buildMedia() {
   const files = await glob(`*`, { cwd: `${RootDir}/public/media/` })
-  const images: string[] = []
+  const images = []
 
   for (const file of files) {
     const [, extension] = file.split('.')
@@ -21,16 +18,14 @@ async function buildMedia() {
   }
 
   const exports = ['// This is a generated file\n\n']
-  let count = 1
-  const imgNames: string[] = []
+  const imgNames = []
   for (const image of images) {
-    const name = `file${doubleDigit(count)}`
+    const name = image.replace(/\.(webp|jpg|jpeg)/, '').replace(/-/g, '_')
     imgNames.push(name)
     exports.push(`import ${name} from '../../public/media/${image}'\n`)
-    count += 1
   }
 
-  exports.push(`\nexport const images = [${imgNames.toString()}]\n`)
+  exports.push(`\nexport const images = {${imgNames.map(n => `\n  ${n}`)},\n}\n`)
 
   await fsPromises.writeFile(join('.', 'utils', 'media', 'media.ts'), exports.join(''), 'utf-8')
 }

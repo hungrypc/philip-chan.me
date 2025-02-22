@@ -10,7 +10,6 @@ export const useGetOnScreenElements = (elements: Element[], options?: Intersecti
         const elementsWithinViewbox: Element[] = []
 
         entries.forEach((entry: IntersectionObserverEntry) => {
-          // console.log(entry)
           entry.isIntersecting && elementsWithinViewbox.push(entry.target)
         })
 
@@ -18,14 +17,13 @@ export const useGetOnScreenElements = (elements: Element[], options?: Intersecti
       })
     }, options)
 
-    elements.map(el => observer.current && observer.current.observe(el))
+    for (const element of elements) {
+      observer.current && observer.current.observe(element)
+    }
     return () => {
       observer.current && observer.current.disconnect()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  // console.log('-------RERENDER-------')
-  // console.log(intersectingElements)
 
   return intersectingElements
 }
