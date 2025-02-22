@@ -17,6 +17,7 @@ const thankyouImage = images.cover_bg2
 
 const Wedding: React.FC<AppProps> = () => {
   const [rootRef, setRootRef] = useState<HTMLDivElement | null>(null)
+  const [isClicked, setIsClicked] = useState(false)
 
   const registerRef = useCallback((node: HTMLDivElement | null) => {
     if (node !== null) {
@@ -31,12 +32,15 @@ const Wedding: React.FC<AppProps> = () => {
         <section id='home' className='w-full overflow-hidden bg-black text-[#f2ebe2] sm:h-screen'>
           <div className='overlapGrid h-full w-full justify-center overflow-hidden align-middle'>
             <Image
-              className='relative z-10 opacity-0 transition-opacity duration-700 ease-linear hover:opacity-100'
+              className={`relative z-10 ${
+                isClicked ? 'opacity-100 sm:opacity-0' : 'opacity-0'
+              } transition-opacity duration-700 ease-linear hover:opacity-100`}
               src={homeImageC}
               alt='bg-cover'
               placeholder='blur'
               objectFit='cover'
               priority
+              onClick={() => setIsClicked(!isClicked)}
             />
             <Image className='relative' src={homeImage} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
           </div>
@@ -142,10 +146,7 @@ const Wedding: React.FC<AppProps> = () => {
             </div>
           </div>
         </section>
-        <section
-          id='thankyou'
-          className='h-full max-h-[calc(100vh-6rem)] w-full overflow-hidden bg-black text-[#f2ebe2]'
-        >
+        <section id='thankyou' className='h-full w-full overflow-hidden bg-black text-[#f2ebe2]'>
           <div className='relative h-full w-full overflow-hidden'>
             <div className='absolute max-h-fit scale-125 sm:scale-110 md:top-[-30vw] lg:top-[-60vw]'>
               <Image src={thankyouImage} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
