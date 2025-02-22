@@ -26,17 +26,14 @@ const Wedding: React.FC<AppProps> = () => {
     <>
       <div id='wedding-root' className='h-full w-full' ref={registerRef}>
         <WeddingNav rootRef={rootRef} />
-        <section
-          id='home'
-          className='h-[calc(100vh-44vw)] max-h-fit w-full overflow-hidden bg-black text-[#f2ebe2] sm:h-screen'
-        >
-          <div className='relative h-full w-full overflow-hidden'>
-            {/* <div className='absolute max-h-fit scale-125 sm:scale-110 md:top-[-30vw] lg:top-[-61vw]'>
+        <section id='home' className='w-full overflow-hidden bg-black text-[#f2ebe2] sm:h-screen'>
+          {/* <div className='relative h-full w-full overflow-hidden'>
+            <div className='absolute max-h-fit scale-125 sm:scale-110 md:top-[-30vw] lg:top-[-61vw]'>
               <Image src={images[1]} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
-            </div> */}
-            <div className='absolute max-h-fit overflow-hidden md:top-[-30vw] lg:top-[-43vw]'>
-              <Image src={image} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
             </div>
+          </div> */}
+          <div className='flex h-full w-full justify-center overflow-hidden align-middle'>
+            <Image src={image} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
           </div>
         </section>
         <section id='details' className='w-full scroll-mt-24 scroll-pt-24 bg-[#f2ebe2] p-12 text-black'>
