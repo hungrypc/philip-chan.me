@@ -23,10 +23,10 @@ const experience = [
     endDate: 'Present',
     details: (
       <p>
-        Designed architecture and implemented system migration for multi-region data management, compliant with GDPR to
+        Designed architecture and coordinated system migration for multi-region data management compliant with GDPR to
         enable expansion into Europe. Improved infrastructure tools, resulting in quicker disaster recovery response
-        time and a simplified process for cross-region deployment. Built automated system to scale resources based on
-        custom metrics specifically designed within the context of ticketing, making resource management efficient and
+        time and a simplified process for cross-region deployment. Implemented automated system to scale resources based
+        on custom metrics designed around the context of ticketing, making resource management efficient and
         cost-effective.
       </p>
     ),
