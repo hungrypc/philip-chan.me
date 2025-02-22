@@ -10,5 +10,6 @@ module.exports = () => {
     images: {
       // domains: ['res.cloudinary.com'],
     },
+    optimizeFonts: false,
   })
 }
