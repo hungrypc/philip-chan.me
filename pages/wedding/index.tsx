@@ -45,7 +45,7 @@ const Wedding: React.FC<AppProps> = () => {
             <Image className='relative' src={homeImage} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
           </div>
         </section>
-        <section id='details' className='w-full scroll-mt-24 scroll-pt-24 bg-[#f2ebe2] p-24 text-black sm:p-12'>
+        <section id='details' className='w-full scroll-mt-24 scroll-pt-24 bg-[#f2ebe2] py-24 px-4 text-black sm:p-12'>
           <div className='mx-auto flex h-min flex-col gap-16 text-center sm:h-[535px] sm:max-w-[140ch] md:gap-1'>
             <div className='m-auto flex h-full w-full flex-col items-center justify-center'>
               <h2 className='forum-regular mb-4 uppercase'>~ Arrival ~</h2>
@@ -81,9 +81,12 @@ const Wedding: React.FC<AppProps> = () => {
             </div>
           </div>
         </section>
-        <section id='travel' className='h-min w-full scroll-mt-24 scroll-pt-24 bg-black p-12  pb-24 text-[#f2ebe2]'>
+        <section
+          id='travel'
+          className='h-min w-full scroll-mt-24 scroll-pt-24 bg-black p-12 px-8 pb-24 text-[#f2ebe2] sm:px-12'
+        >
           <div className='mx-auto flex flex-col text-center sm:max-w-[120ch]'>
-            <h1 className='forum-regular mb-8'>TRAVEL TIPS</h1>
+            <h1 className='forum-regular mb-8'>TRAVEL</h1>
             <div className='flex flex-col gap-8 lg:flex-row'>
               <div id='my-map-canvas' className='h-[400px] w-full overflow-hidden sm:min-w-[500px] lg:max-w-[500px]'>
                 <iframe className='h-full w-full border-0' frameBorder='0' src='https://shorturl.at/T1GlE' />
@@ -124,7 +127,7 @@ const Wedding: React.FC<AppProps> = () => {
         </section>
         <section
           id='registry'
-          className='h-full min-h-[400px] w-full scroll-mt-24 scroll-pt-24 bg-[#f2ebe2] p-12 pb-24 text-black sm:h-min'
+          className='min-h-[400px] w-full scroll-mt-24 scroll-pt-24 bg-[#f2ebe2] p-12 px-8 pb-24 text-black sm:h-min sm:px-12'
         >
           <div className='mx-auto text-center sm:max-w-[120ch]'>
             <h1 className='forum-regular'>REGISTRY</h1>
@@ -146,9 +149,9 @@ const Wedding: React.FC<AppProps> = () => {
             </div>
           </div>
         </section>
-        <section id='thankyou' className='h-full w-full overflow-hidden bg-black text-[#f2ebe2]'>
-          <div className='relative h-full w-full overflow-hidden'>
-            <div className='absolute max-h-fit scale-125 sm:scale-110 md:top-[-30vw] lg:top-[-60vw]'>
+        <section id='thankyou' className='w-full overflow-hidden bg-black text-[#f2ebe2] sm:h-full'>
+          <div className='w-full overflow-hidden sm:relative sm:h-full'>
+            <div className='max-h-fit scale-125 sm:absolute sm:top-[-20vw] sm:scale-110 md:top-[-40vw] lg:top-[-60vw]'>
               <Image src={thankyouImage} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
             </div>
           </div>
