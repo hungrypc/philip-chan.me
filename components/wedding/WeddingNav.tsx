@@ -41,7 +41,7 @@ export const WeddingNav: React.FC<Props> = ({ rootRef }) => {
 
   const onScreenElement = useGetOnScreenElement(elements, {
     root: rootRef,
-    rootMargin: `${(headerRef.current?.offsetHeight ?? 96) * -2}px`,
+    rootMargin: '-60% 0% -60% 0%',
     threshold: 0,
   })
   const visibleAnchorItem = onScreenElement?.id

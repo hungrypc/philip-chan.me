@@ -43,8 +43,8 @@ export const useGetOnScreenElement = (elements: Element[], options: Required<Int
 
   useEffect(() => {
     observer.current = new IntersectionObserver(entries => {
-      handleScroll()
       entries.forEach((entry: IntersectionObserverEntry) => {
+        handleScroll()
         if (!shouldUpdate(entry)) {
           return
         }

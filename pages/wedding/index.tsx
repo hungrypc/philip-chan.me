@@ -36,8 +36,8 @@ const Wedding: React.FC<AppProps> = () => {
             <Image src={image} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
           </div>
         </section>
-        <section id='details' className='w-full scroll-mt-24 scroll-pt-24 bg-[#f2ebe2] p-12 text-black'>
-          <div className='mx-auto flex h-min flex-col gap-12 text-center sm:h-[535px] sm:max-w-[140ch] md:gap-1'>
+        <section id='details' className='w-full scroll-mt-24 scroll-pt-24 bg-[#f2ebe2] p-24 text-black sm:p-12'>
+          <div className='mx-auto flex h-min flex-col gap-16 text-center sm:h-[535px] sm:max-w-[140ch] md:gap-1'>
             <div className='m-auto flex h-full w-full flex-col items-center justify-center'>
               <h2 className='forum-regular mb-4 uppercase'>~ Arrival ~</h2>
               <div className='poppins-light text-xs uppercase'>
@@ -54,7 +54,7 @@ const Wedding: React.FC<AppProps> = () => {
               </div>
               <div className='eb-garamond-italic mt-3 text-lg'>black tie attire</div>
             </div>
-            <div className='m-auto flex h-full w-full flex-col justify-center gap-12 align-middle sm:flex-row'>
+            <div className='m-auto flex h-full w-full flex-col justify-center gap-20 align-middle sm:flex-row sm:gap-12'>
               <div className='m-auto flex h-full w-full flex-col justify-center align-middle'>
                 <h2 className='forum-regular mb-4 uppercase'>~ Ceremony ~</h2>
                 <div className='poppins-light text-xs uppercase'>
