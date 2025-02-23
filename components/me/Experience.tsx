@@ -8,10 +8,10 @@ const experience = [
     endDate: 'Present',
     details: (
       <p>
-        Worked on functionalities for the platform that enabled users to manage their shipping and logistics needs.
-        Features include third-party e-commerce API integrations, re-building billing system, bulk import packages via
-        label scanner with text-recognition. Overseeing and conducting full migration of legacy system to new
-        architecture whilst continuing to develop current services for client needs.
+        Worked on functionalities for the platform that enables users to manage their shipping and logistics needs.
+        Features include various third-party API integrations, billing system, text-recognition label scanner.
+        Overseeing and conducting full migration of legacy system to new infrastructure whilst continuing to develop
+        current product and services for client needs.
       </p>
     ),
     stack: 'Typescript, Nodejs, React, GCloud, Firebase, PostgreSQL',
