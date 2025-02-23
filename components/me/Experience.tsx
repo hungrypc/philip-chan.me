@@ -57,7 +57,7 @@ export const Experience: React.FC = () => (
           <section className='flex flex-col items-start justify-between gap-1 sm:flex-row sm:gap-6'>
             <div className='flex flex-row-reverse gap-1 text-center text-sm text-stone-600 dark:text-stone-400 sm:flex-col sm:gap-0 sm:pl-1 sm:pt-1'>
               <time dateTime={parsedEndDate.tag}>{parsedEndDate.short}</time>
-              <div className='sm:leading-4'>{'|'}</div>
+              <div className='rotate-90 sm:rotate-0 sm:leading-4'>{'|'}</div>
               <time dateTime={parsedStartDate.tag}>{parsedStartDate.short}</time>
             </div>
             <div>
