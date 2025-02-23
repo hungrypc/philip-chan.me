@@ -2,22 +2,42 @@ if (process.env.NODE_ENV === 'development') {
   require('preact/debug')
 }
 
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 import { AppProps } from 'next/app'
-import Image from 'next/image'
+import Head from 'next/head'
 import Link from 'next/link'
 
-import { WeddingNav } from '@components/wedding'
-import { images } from '@utils/media'
+import { SEO } from '@components/SEO'
+import { GallerySection, HomeSection, WeddingNav } from '@components/wedding'
+import { useGetOnScreenElement } from '@utils/hooks'
+import { safelyGetWindow } from '@utils/safely-get-window'
 
-const homeImage = images.cover_bg1
-const homeImageC = images.cover_bg1c
-const thankyouImage = images.cover_bg2
+const routes = [
+  {
+    id: 'home',
+    title: 'Home',
+  },
+  {
+    id: 'details',
+    title: 'Details',
+  },
+  {
+    id: 'travel',
+    title: 'Travel',
+  },
+  {
+    id: 'registry',
+    title: 'Registry',
+  },
+  {
+    id: 'gallery',
+    title: 'Gallery',
+  },
+]
 
 const Wedding: React.FC<AppProps> = () => {
   const [rootRef, setRootRef] = useState<HTMLDivElement | null>(null)
-  const [isClicked, setIsClicked] = useState(false)
 
   const registerRef = useCallback((node: HTMLDivElement | null) => {
     if (node !== null) {
@@ -25,27 +45,30 @@ const Wedding: React.FC<AppProps> = () => {
     }
   }, [])
 
+  const elements = useMemo(() => {
+    return routes.map(({ id }) => safelyGetWindow()?.document.getElementById(id)) as Element[]
+  }, [])
+
+  const onScreenElement = useGetOnScreenElement(elements, {
+    root: rootRef,
+    rootMargin: '-45% 0% -45% 0%',
+    threshold: 0,
+  })
+  const visibleAnchorItem = onScreenElement?.id
+
   return (
     <>
+      <Head>
+        <link rel='icon' href='/favicon-w.ico' />
+      </Head>
+      <SEO title='Xi & Phil' description="Xi & Phil's Wedding Site" />
       <div id='wedding-root' className='h-full w-full' ref={registerRef}>
-        <WeddingNav rootRef={rootRef} />
-        <section id='home' className='w-full overflow-hidden bg-black text-[#f2ebe2] sm:h-screen'>
-          <div className='overlapGrid h-full w-full justify-center overflow-hidden align-middle'>
-            <Image
-              className={`relative z-10 ${
-                isClicked ? 'opacity-100 sm:opacity-0' : 'opacity-0'
-              } transition-opacity duration-700 ease-linear hover:opacity-100`}
-              src={homeImageC}
-              alt='bg-cover'
-              placeholder='blur'
-              objectFit='cover'
-              priority
-              onClick={() => setIsClicked(!isClicked)}
-            />
-            <Image className='relative' src={homeImage} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
-          </div>
-        </section>
-        <section id='details' className='w-full scroll-mt-24 scroll-pt-24 bg-[#f2ebe2] py-24 px-4 text-black sm:p-12'>
+        <WeddingNav visibleAnchorItem={visibleAnchorItem} routes={routes} />
+        <HomeSection visibleAnchorItem={visibleAnchorItem} />
+        <section
+          id={routes[1].id}
+          className='w-full scroll-mt-24 scroll-pt-24 bg-[#f2ebe2] py-24 px-4 text-black sm:p-12'
+        >
           <div className='mx-auto flex h-min flex-col gap-16 text-center sm:h-[535px] sm:max-w-[140ch] md:gap-1'>
             <div className='m-auto flex h-full w-full flex-col items-center justify-center'>
               <h2 className='forum-regular mb-4 uppercase'>~ Arrival ~</h2>
@@ -82,11 +105,11 @@ const Wedding: React.FC<AppProps> = () => {
           </div>
         </section>
         <section
-          id='travel'
+          id={routes[2].id}
           className='h-min w-full scroll-mt-24 scroll-pt-24 bg-black p-12 px-8 pb-24 text-[#f2ebe2] sm:px-12'
         >
           <div className='mx-auto flex flex-col text-center sm:max-w-[120ch]'>
-            <h1 className='forum-regular mb-8'>TRAVEL</h1>
+            <h1 className='forum-regular mb-8 uppercase'>{routes[2].title}</h1>
             <div className='flex flex-col gap-8 lg:flex-row'>
               <div id='my-map-canvas' className='h-[400px] w-full overflow-hidden sm:min-w-[500px] lg:max-w-[500px]'>
                 <iframe className='h-full w-full border-0' frameBorder='0' src='https://shorturl.at/T1GlE' />
@@ -126,11 +149,11 @@ const Wedding: React.FC<AppProps> = () => {
           </div>
         </section>
         <section
-          id='registry'
+          id={routes[3].id}
           className='min-h-[400px] w-full scroll-mt-24 scroll-pt-24 bg-[#f2ebe2] p-12 px-8 pb-24 text-black sm:h-min sm:px-12'
         >
           <div className='mx-auto text-center sm:max-w-[120ch]'>
-            <h1 className='forum-regular'>REGISTRY</h1>
+            <h1 className='forum-regular mb-8 uppercase'>{routes[3].title}</h1>
             <div className='forum-regular text-start text-xl font-thin tracking-normal'>
               <div>
                 Your presence at our wedding is all we could ever ask for, and we&apos;re so grateful to have you
@@ -149,13 +172,7 @@ const Wedding: React.FC<AppProps> = () => {
             </div>
           </div>
         </section>
-        <section id='thankyou' className='w-full overflow-hidden bg-black text-[#f2ebe2] sm:h-full'>
-          <div className='w-full overflow-hidden sm:relative sm:h-full'>
-            <div className='max-h-fit scale-125 sm:absolute sm:top-[-20vw] sm:scale-110 md:top-[-40vw] lg:top-[-60vw]'>
-              <Image src={thankyouImage} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
-            </div>
-          </div>
-        </section>
+        <GallerySection id={routes[4].id} />
       </div>
     </>
   )

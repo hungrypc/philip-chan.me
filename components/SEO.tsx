@@ -1,9 +1,14 @@
 import { DefaultSeo } from 'next-seo'
 
-export const SEO: React.FC = () => (
+type Props = {
+  title?: string
+  description?: string
+}
+
+export const SEO: React.FC<Props> = ({ title = 'Phil Chan', description = 'Full-Stack Developer' }) => (
   <DefaultSeo
-    title="Phil Chan's site"
-    description='Full-stack developer.'
+    title={title}
+    description={description}
     openGraph={{
       site_name: 'Philip Chan | philip-chan.me',
     }}
