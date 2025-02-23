@@ -9,6 +9,7 @@ const image1 = wedding.gallery.gallery_1
 const image2 = wedding.gallery.gallery_2
 const image3 = wedding.gallery.gallery_3
 const image4 = wedding.gallery.gallery_5
+const image5 = wedding.gallery.gallery_7
 
 type Props = {
   id: string
@@ -18,9 +19,13 @@ export const GallerySection: React.FC<Props> = ({ id }) => {
   const [imgIndex, setImgIndex] = useState(0)
   const { isMobile } = useWindowSize()
 
+  const getIndex = (index: number) => {
+    return isMobile ? index + 1 : index
+  }
+
   const triggerNextImg = () => {
     setImgIndex(prevIndex => {
-      const nextIndex = (prevIndex + 1) % (isMobile ? 4 : 3)
+      const nextIndex = (prevIndex + 1) % (isMobile ? 5 : 4)
       return nextIndex
     })
   }
@@ -80,7 +85,7 @@ export const GallerySection: React.FC<Props> = ({ id }) => {
         )}
         <Image
           className={`relative z-20 h-full w-full pl-52 transition-opacity duration-700 ease-linear sm:pl-0 ${
-            imgIndex === (isMobile ? 3 : 2) ? 'opacity-100' : 'opacity-0'
+            imgIndex === getIndex(2) ? 'opacity-100' : 'opacity-0'
           }`}
           src={image4}
           alt='bg-cover'
@@ -88,6 +93,17 @@ export const GallerySection: React.FC<Props> = ({ id }) => {
           objectFit='cover'
           priority
           objectPosition={isMobile ? '20% 50%' : 'center'}
+        />
+        <Image
+          className={`relative z-10 h-full w-full pl-52 transition-opacity duration-700 ease-linear sm:pl-0 ${
+            imgIndex === getIndex(3) ? 'opacity-100' : 'opacity-0'
+          }`}
+          src={image5}
+          alt='bg-cover'
+          placeholder='blur'
+          objectFit='cover'
+          priority
+          objectPosition={'top'}
         />
       </div>
     </section>
