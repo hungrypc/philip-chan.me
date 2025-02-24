@@ -50,7 +50,7 @@ export const GallerySection: React.FC<Props> = ({ id }) => {
   return (
     <section id={id} className='w-full overflow-hidden bg-black text-[#f2ebe2] sm:h-full'>
       <div className='overlapGrid h-full w-full overflow-hidden'>
-        <div className='relative z-20 flex flex-row h-full w-full'>
+        <div className='relative z-20 flex h-full w-full flex-row'>
           <div className='h-full w-full' onClick={() => triggerPrevImg()} />
           <div className='h-full w-full' onClick={() => triggerNextImg()} />
         </div>
