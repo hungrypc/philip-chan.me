@@ -30,6 +30,15 @@ export const GallerySection: React.FC<Props> = ({ id }) => {
     })
   }
 
+  const triggerPrevImg = () => {
+    setImgIndex(prevIndex => {
+      const prevIndexValue = prevIndex - 1
+      const nextIndex = prevIndexValue < 0 ? (isMobile ? 5 : 4) - 1 : prevIndexValue
+      console.log(nextIndex)
+      return nextIndex
+    })
+  }
+
   useEffect(() => {
     const interval = setInterval(() => {
       triggerNextImg()
@@ -40,9 +49,13 @@ export const GallerySection: React.FC<Props> = ({ id }) => {
 
   return (
     <section id={id} className='w-full overflow-hidden bg-black text-[#f2ebe2] sm:h-full'>
-      <div className='overlapGrid h-full w-full overflow-hidden' onClick={() => triggerNextImg()}>
+      <div className='overlapGrid h-full w-full overflow-hidden'>
+        <div className='relative z-20 flex h-full w-full flex-row'>
+          <div className='h-full w-full' onClick={() => triggerPrevImg()} />
+          <div className='h-full w-full' onClick={() => triggerNextImg()} />
+        </div>
         <div
-          className={`z-40 w-full transition-opacity duration-700 ease-linear sm:relative sm:h-full ${
+          className={`z-10 w-full transition-opacity duration-700 ease-linear sm:relative sm:h-full ${
             imgIndex === 0 ? 'opacity-100' : 'opacity-0'
           }`}
         >
@@ -53,7 +66,7 @@ export const GallerySection: React.FC<Props> = ({ id }) => {
         {isMobile ? (
           <>
             <Image
-              className={`relative z-30 transition-opacity duration-700 ease-linear ${
+              className={`relative z-10 transition-opacity duration-700 ease-linear ${
                 imgIndex === 1 ? 'opacity-100' : 'opacity-0'
               }`}
               src={image2}
@@ -63,7 +76,7 @@ export const GallerySection: React.FC<Props> = ({ id }) => {
               priority
             />
             <Image
-              className={`relative z-20 transition-opacity duration-700 ease-linear ${
+              className={`relative z-10 transition-opacity duration-700 ease-linear ${
                 imgIndex === 2 ? 'opacity-100' : 'opacity-0'
               }`}
               src={image3}
@@ -75,7 +88,7 @@ export const GallerySection: React.FC<Props> = ({ id }) => {
           </>
         ) : (
           <div
-            className={`z-30 flex w-full flex-row justify-center overflow-hidden align-middle transition-opacity duration-700 ease-linear sm:h-full ${
+            className={`z-10 flex w-full flex-row justify-center overflow-hidden align-middle transition-opacity duration-700 ease-linear sm:h-full ${
               imgIndex === 1 ? 'opacity-100' : 'opacity-0'
             }`}
           >
@@ -84,7 +97,7 @@ export const GallerySection: React.FC<Props> = ({ id }) => {
           </div>
         )}
         <Image
-          className={`relative z-20 h-full w-full pl-52 transition-opacity duration-700 ease-linear sm:pl-0 ${
+          className={`relative z-10 h-full w-full pl-52 transition-opacity duration-700 ease-linear sm:pl-0 ${
             imgIndex === getIndex(2) ? 'opacity-100' : 'opacity-0'
           }`}
           src={image4}
