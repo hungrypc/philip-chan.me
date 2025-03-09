@@ -51,17 +51,20 @@ export const GallerySection: React.FC<Props> = ({ id }) => {
       <div className='overlapGrid h-full w-full overflow-hidden'>
         <div className='relative z-20 flex h-full w-full flex-row'>
           <div className='h-full w-full cursor-pointer' onClick={() => triggerPrevImg()} />
+          <div className='h-full w-full' />
           <div className='h-full w-full cursor-pointer' onClick={() => triggerNextImg()} />
         </div>
-        <div
-          className={`z-10 w-full transition-opacity duration-700 ease-linear sm:relative sm:h-full ${
+        <Image
+          className={`relative z-10 h-full w-full pl-52 transition-opacity duration-700 ease-linear sm:pl-0 ${
             imgIndex === 0 ? 'opacity-100' : 'opacity-0'
           }`}
-        >
-          <div className='max-h-fit scale-125 sm:absolute sm:top-[-20vw] sm:scale-110 md:top-[-40vw] lg:top-[-60vw]'>
-            <Image src={image1} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
-          </div>
-        </div>
+          src={image4}
+          alt='bg-cover'
+          placeholder='blur'
+          objectFit='cover'
+          priority
+          objectPosition={'top'}
+        />
         {isMobile ? (
           <>
             <Image
@@ -95,17 +98,15 @@ export const GallerySection: React.FC<Props> = ({ id }) => {
             <Image src={image3} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
           </div>
         )}
-        <Image
-          className={`relative z-10 h-full w-full pl-52 transition-opacity duration-700 ease-linear sm:pl-0 ${
+        <div
+          className={`z-10 w-full transition-opacity duration-700 ease-linear sm:relative sm:h-full ${
             imgIndex === (isMobile ? 3 : 2) ? 'opacity-100' : 'opacity-0'
           }`}
-          src={image4}
-          alt='bg-cover'
-          placeholder='blur'
-          objectFit='cover'
-          priority
-          objectPosition={'top'}
-        />
+        >
+          <div className='max-h-fit scale-125 sm:absolute sm:top-[-20vw] sm:scale-110 md:top-[-40vw] lg:top-[-60vw]'>
+            <Image src={image1} alt='bg-cover' placeholder='blur' objectFit='cover' priority />
+          </div>
+        </div>
         {isMobile ? (
           <>
             <Image
