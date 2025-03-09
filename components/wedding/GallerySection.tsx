@@ -22,10 +22,6 @@ export const GallerySection: React.FC<Props> = ({ id }) => {
   const [imgIndex, setImgIndex] = useState(0)
   const { isMobile } = useWindowSize()
 
-  const getIndex = (index: number) => {
-    return isMobile ? index + 1 : index
-  }
-
   const triggerNextImg = () => {
     setImgIndex(prevIndex => {
       const nextIndex = (prevIndex + 1) % (isMobile ? 8 : 6)
