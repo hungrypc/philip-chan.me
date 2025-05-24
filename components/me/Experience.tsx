@@ -4,7 +4,7 @@ const experience = [
   {
     company: 'UniUni',
     position: 'Sr. Software Engineer (full-stack)',
-    startDate: 'Apr/2025',
+    startDate: 'Mar/2025',
     endDate: 'Present',
     details: (
       <p>
