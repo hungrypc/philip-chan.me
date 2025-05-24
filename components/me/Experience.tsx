@@ -14,7 +14,7 @@ const experience = [
         ledger, billing system, and order management automation on third-party integrations (e.g. Shopify).
       </p>
     ),
-    stack: 'Typescript, Nodejs, React, AWS, Prisma+GraphQL, PostgreSQL',
+    stack: 'Typescript, Nodejs, Nextjs, AWS, Prisma/GraphQL, PostgreSQL',
   },
   {
     company: 'Shippie',
