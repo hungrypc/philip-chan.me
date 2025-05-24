@@ -4,17 +4,18 @@ const experience = [
   {
     company: 'UniUni',
     position: 'Sr. Software Engineer (full-stack)',
-    startDate: 'Apr/2025',
+    startDate: 'Mar/2025',
     endDate: 'Present',
     details: (
       <p>
         Designed and built backend infrastructure tools from the ground up to support rapid development, enabling a
-        newly formed team to launch a new platform within two months. Planned and implemented core functionalities,
-        including general shipment management, payment processing, closed-loop wallet credits system, transaction
-        ledger, billing system, and order management automation on third-party integrations (e.g. Shopify).
+        newly formed team to launch a production-ready platform within two months. Architected and delivered core
+        functionalities, including general shipment management, payment processing workflows, a closed-loop wallet
+        credits system, transaction ledger, modular billing engine, and automated order synchronization via third-party
+        integrations (e.g. Shopify).
       </p>
     ),
-    stack: 'Typescript, Nodejs, React, AWS, Prisma+GraphQL, PostgreSQL',
+    stack: 'Typescript, Nodejs, Nextjs, AWS, Prisma/GraphQL, PostgreSQL',
   },
   {
     company: 'Shippie',
