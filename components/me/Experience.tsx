@@ -2,16 +2,31 @@ import { parseDate } from '@utils/date'
 
 const experience = [
   {
+    company: 'UniUni',
+    position: 'Sr. Software Engineer (full-stack)',
+    startDate: 'Apr/2025',
+    endDate: 'Present',
+    details: (
+      <p>
+        Designed and built backend infrastructure tools from the ground up to support rapid development, enabling a
+        newly formed team to launch a new platform within two months. Planned and implemented core functionalities,
+        including general shipment management, payment processing, closed-loop wallet credits system, transaction
+        ledger, billing system, and order management automation on third-party integrations (e.g. Shopify).
+      </p>
+    ),
+    stack: 'Typescript, Nodejs, React, AWS, Prisma+GraphQL, PostgreSQL',
+  },
+  {
     company: 'Shippie',
     position: 'Sr. Software Engineer (full-stack)',
     startDate: 'Nov/2024',
     endDate: 'Present',
     details: (
       <p>
-        Worked on functionalities for the platform that enables users to manage their shipping and logistics needs.
-        Features include various third-party API integrations, billing system, text-recognition label scanner.
-        Overseeing and conducting full migration of legacy system to new infrastructure whilst continuing to develop
-        current product and services for client needs.
+        Developed utility features to support internal logistical operations and enhanced backend observability to
+        enable faster incident resolution. Integrated various third-party APIs, restructured the billing system, and
+        built a text-recognition label scanner to streamline order transfers from partnered services. Currently
+        maintaining and adapting these systems as the company transitions to a new business model.
       </p>
     ),
     stack: 'Typescript, Nodejs, React, GCloud, Firebase, PostgreSQL',
