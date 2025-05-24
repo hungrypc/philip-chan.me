@@ -11,7 +11,7 @@ const experience = [
         Designed and built backend infrastructure tools from the ground up to support rapid development, enabling a
         newly formed team to launch a production-ready platform within two months. Architected and delivered core
         functionalities, including general shipment management, payment processing workflows, a closed-loop wallet
-        credits system, transaction ledger, modular billing engine, and automated order synchronization via third-party
+        credits system, transaction ledger, modular billing engine, and automated order synchronization with third-party
         integrations (e.g. Shopify).
       </p>
     ),
