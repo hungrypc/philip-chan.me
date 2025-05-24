@@ -10,8 +10,8 @@ const experience = [
       <p>
         Designed and built backend infrastructure tools from the ground up to support rapid development, enabling a
         newly formed team to launch a new platform within two months. Planned and implemented core functionalities,
-        including general shipment management, payment processing, closed-loop wallet credits system, transaction
-        ledger, billing system, and order management automation on third-party integrations (e.g. Shopify).
+        including general shipment management, payment processing, a closed-loop wallet credits system, transaction
+        ledger, modular billing engine, and order management automation on third-party integrations (e.g. Shopify).
       </p>
     ),
     stack: 'Typescript, Nodejs, Nextjs, AWS, Prisma/GraphQL, PostgreSQL',
