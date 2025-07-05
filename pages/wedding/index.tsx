@@ -74,7 +74,7 @@ const Wedding: React.FC<AppProps> = () => {
               <h2 className='forum-regular mb-4 uppercase'>~ Arrival ~</h2>
               <div className='poppins-light text-xs uppercase'>
                 <div>Saturday July 12 2025</div>
-                <div>4PM ~ 5PM</div>
+                <div>4:30PM ~ 5PM</div>
                 <div>The Vancouver Club</div>
                 <div className='font-medium underline'>
                   <Link href='https://g.co/kgs/e79pNRg'>
