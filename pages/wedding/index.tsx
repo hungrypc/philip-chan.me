@@ -162,7 +162,7 @@ const Wedding: React.FC<AppProps> = () => {
               <div>
                 While we don&apos;t have a traditional registry, we would be grateful for any contributions toward our
                 future together. Your generosity will help us as we begin this exciting new chapter. Interac e-transfers
-                are accepted at <span className='underline'>philipchanhk626@gmail.com</span>. For venmo, please use
+                are accepted at <span className='underline'>philipchanhk626@gmail.com</span>. For venmo, please use{' '}
                 <a className='underline' href='https://venmo.com/u/Xi-Lin-1'>
                   @Xi-Lin-1
                 </a>
