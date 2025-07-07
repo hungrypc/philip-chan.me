@@ -166,6 +166,7 @@ const Wedding: React.FC<AppProps> = () => {
                 <a className='underline' href='https://venmo.com/u/Xi-Lin-1'>
                   @Xi-Lin-1
                 </a>
+                .
               </div>
               <br />
               <div>
