@@ -2,6 +2,21 @@ import { parseDate } from '@utils/date'
 
 const experience = [
   {
+    company: 'WithWalter',
+    position: 'Founding Engineer',
+    startDate: 'Jul/2025',
+    endDate: 'Present',
+    details: (
+      <p>
+        Developed the foundation for a new startup that processes user credit reports and transaction data through an
+        LLM-powered analysis pipeline. Designed and implemented a credit analysis engine to ingest, normalize, and
+        reason over large-scale financial data, leveraging LLMs, evaluation-based validation, and retrieval-augmented
+        generation in order to deliver personalized credit optimization insights and card recommendations.
+      </p>
+    ),
+    stack: 'Typescript, Nextjs, Inngest, LangChain, Supabase, PGVector',
+  },
+  {
     company: 'UniUni',
     position: 'Sr. Software Engineer (full-stack)',
     startDate: 'Mar/2025',
@@ -12,25 +27,10 @@ const experience = [
         newly formed team to launch a production-ready platform within two months. Architected and delivered core
         functionalities, including general shipment management, payment processing workflows, a closed-loop wallet
         credits system, transaction ledger, modular billing engine, and automated order synchronization with third-party
-        integrations (e.g. Shopify).
+        integrations (Shopify, WooCommerce, Shipstation).
       </p>
     ),
     stack: 'Typescript, Nodejs, Nextjs, AWS, Prisma/GraphQL, PostgreSQL',
-  },
-  {
-    company: 'Shippie',
-    position: 'Sr. Software Engineer (full-stack)',
-    startDate: 'Nov/2024',
-    endDate: 'Present',
-    details: (
-      <p>
-        Developed utility features to support internal logistical operations and enhanced backend observability to
-        enable faster incident resolution. Integrated various third-party APIs, restructured the billing system, and
-        built a text-recognition label scanner to streamline order transfers from partnered services. Currently
-        maintaining and adapting these systems as the company transitions to a new business model.
-      </p>
-    ),
-    stack: 'Typescript, Nodejs, React, GCloud, Firebase, PostgreSQL',
   },
   {
     company: 'Yoop',
@@ -47,6 +47,21 @@ const experience = [
       </p>
     ),
     stack: 'Java, Spring, Terraform, AWS, Redis, MySQL',
+  },
+  {
+    company: 'Shippie',
+    position: 'Sr. Software Engineer (full-stack)',
+    startDate: 'Nov/2024',
+    endDate: 'Dec/2025',
+    details: (
+      <p>
+        Developed utility features to support internal logistical operations and enhanced backend observability to
+        enable faster incident resolution. Integrated various third-party APIs, restructured the billing system, and
+        built a text-recognition label scanner to streamline order transfers from partnered services. Maintained and
+        adapted systems during the company transition into their new business model.
+      </p>
+    ),
+    stack: 'Typescript, Nodejs, React, GCloud, Firebase, PostgreSQL',
   },
   {
     company: 'Guiker',
