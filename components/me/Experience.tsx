@@ -8,10 +8,11 @@ const experience = [
     endDate: 'Present',
     details: (
       <p>
-        Developed the foundation for a new startup that processes user credit reports and transaction data through an
-        LLM-powered analysis pipeline. Designed and implemented various systems/tools to ingest, normalize, and reason
-        over large-scale financial data, leveraging LLMs, evaluation-based validation, and retrieval-augmented
-        generation in order to deliver personalized credit optimization insights and card recommendations.
+        Established the foundational systems for a venture-backed startup that processes user credit reports and
+        transaction data through an LLM-powered analysis pipeline. Implemented scalable end-to-end tooling to ingest,
+        normalize, and reason over large-scale financial data, leveraging LLMs, evaluation-driven validation, and
+        retrieval-augmented generation in order to deliver personalized credit optimization insights and card
+        recommendations.
       </p>
     ),
     stack: 'Typescript, Nextjs, Inngest, LangChain, Supabase, PGVector',
