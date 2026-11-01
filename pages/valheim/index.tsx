@@ -72,6 +72,7 @@ const Valheim: React.FC = () => {
   const [copied, setCopied] = useState<'code' | 'ip' | null>(null)
   const [codeGaveUp, setCodeGaveUp] = useState(false)
   const passwordRef = useRef<string | null>(null)
+  const failuresRef = useRef(0)
 
   const lock = useCallback(() => {
     clearStoredPassword()
@@ -87,14 +88,18 @@ const Valheim: React.FC = () => {
         const next = await callApi(pw, action)
         // Ignore the result if the user locked the page while the request was in flight.
         if (passwordRef.current === pw) {
+          failuresRef.current = 0
           setStatus(next)
           setError(null)
         }
       } catch (e) {
-        if (e instanceof UnauthorizedError) {
+        if (passwordRef.current !== pw) {
+          // A late failure from a previous session must not affect the current one.
+        } else if (e instanceof UnauthorizedError) {
           lock()
           setError('Wrong password')
         } else {
+          failuresRef.current += 1
           setError('Could not reach the server controller. Try again in a moment.')
         }
       } finally {
@@ -107,6 +112,7 @@ const Valheim: React.FC = () => {
   const unlock = useCallback(
     (pw: string) => {
       passwordRef.current = pw
+      failuresRef.current = 0
       setPassword(pw)
       setError(null)
       storePassword(pw)
@@ -129,7 +135,10 @@ const Valheim: React.FC = () => {
     if (!password || !transitioning) {
       return
     }
-    const id = setInterval(() => void run(password, 'status'), POLL_MS)
+    const id = setInterval(() => {
+      // Stop hammering the API after repeated failures; the buttons and a reload still work.
+      if (failuresRef.current < 6) void run(password, 'status')
+    }, POLL_MS)
     return () => clearInterval(id)
   }, [password, transitioning, run])
 
@@ -140,7 +149,9 @@ const Valheim: React.FC = () => {
     if (!waitingForCode || !password) {
       return
     }
-    const poll = setInterval(() => void run(password, 'status'), CODE_POLL_MS)
+    const poll = setInterval(() => {
+      if (failuresRef.current < 6) void run(password, 'status')
+    }, CODE_POLL_MS)
     const giveUp = setTimeout(() => setCodeGaveUp(true), CODE_POLL_MAX_MS)
     return () => {
       clearInterval(poll)
